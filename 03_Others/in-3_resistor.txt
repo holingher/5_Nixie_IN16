@@ -1,0 +1,23 @@
+Without knowing the specifics of your particular neon bulbs, here's my take on it.
+
+I'm not sure how much excess current that supply has above and beyond the Nixie requirements, but surely it can spare a milliampere or two.
+
+So...
+
+Remembering the little old NE-2 bulbs that we used to use before LEDs became practical, here's what I would try:
+
+The bulbs themselves had a DC strike voltage of about 90 Volts, and "normal" illumination was attained somewhere between 0.5 mA and 1 mA.  (The power was somewhere between 1/16 Watt and 1/25 Watt, depending on specific tube type.)  After the bulb was illuminated, the voltage dropped to something like 60 Volts, as I recall---maybe a little lower---this is temperature-dependent.
+
+I can't imagine that a neon bulb would do something horribly dramatic if you put a milliampere through it (maybe a little pop, but nothing earthshaking).  I'm assuming you have a few "spare" bulbs to test with.
+
+Anyhow...
+
+If you try a series resistor of something like 180000 Ohms (that's 180 K Ohms) to the 170 VDC power supply the operating current comes out something like
+
+(170 - 60) / 180000  or a little more than 0.6 mA  (Off the top of my head).
+
+If this isn't bright enough, try 150K or lower.  If it's too bright, try 220K or higher.  (Change resistor values something like 10%-20% between trials.)
+
+If you know what the operating voltage really is, pick a resistor to begin with that gives you something between 0.5 mA and 1 mA operating current.  If you have a larger bulb that takes more current, you can try successively smaller values of resistor.
+
+1/4 watt resistors are fine for these tests.

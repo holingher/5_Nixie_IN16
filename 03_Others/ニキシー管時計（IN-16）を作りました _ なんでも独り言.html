@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://ehbtj.com/electronics/nixie-tube-clock-in-16/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0096db">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://ehbtj.com/xmlrpc.php">
+<link type="text/css" media="all" href="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/autoptimize_0d00d2a7f65db6b52af33a2cecbe2b00.css" rel="stylesheet"><title>ニキシー管時計（IN-16）を作りました | なんでも独り言</title>
+
+<!-- All in One SEO Pack 2.5 by Michael Torbert of Semper Fi Web Design[-1,-1] -->
+<meta name="description" content="盆休みは暇だし何しようかなと考えて、なぜかニキシー管時計をつくろうとなったので盆休みのほとんどを時計の製作に割きましたヽ(*´∀｀)ﾉ">
+
+<meta name="keywords" content="時計,ニキシー管,in-16,c#,作品">
+
+<link rel="canonical" href="https://ehbtj.com/electronics/nixie-tube-clock-in-16">
+<meta property="og:title" content="ニキシー管時計（IN-16）を作りました">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ehbtj.com/electronics/nixie-tube-clock-in-16">
+<meta property="og:image" content="https://ehbtj.com/wp-content/uploads/2014/08/0b54af4bf1e5cc917571a9ea7496ddca.jpg">
+<meta property="og:site_name" content="なんでも独り言 | 電子工作とか「つくる」のが好きな人の日々">
+<meta property="fb:admins" content="263035970437465">
+<meta property="fb:app_id" content="580760268789652">
+<meta property="og:description" content="盆休みは暇だし何しようかなと考えて、なぜかニキシー管時計をつくろうとなったので盆休みのほとんどを時計の製作に割きましたヽ(*´∀｀)ﾉ">
+<meta property="article:publisher" content="https://www.facebook.com/ehbtj">
+<meta property="article:published_time" content="2014-08-16T15:35:48Z">
+<meta property="article:modified_time" content="2017-05-01T20:21:19Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@EHbtj">
+<meta name="twitter:domain" content="EHbtj">
+<meta name="twitter:title" content="ニキシー管時計（IN-16）を作りました">
+<meta name="twitter:description" content="盆休みは暇だし何しようかなと考えて、なぜかニキシー管時計をつくろうとなったので盆休みのほとんどを時計の製作に割きましたヽ(*´∀｀)ﾉ">
+<meta name="twitter:image" content="https://ehbtj.com/wp-content/uploads/2014/08/0b54af4bf1e5cc917571a9ea7496ddca.jpg">
+			
+			<script type="text/javascript" async="" src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/linkid.js.descărcare"></script><script async="" src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/analytics.js.descărcare"></script>
+			<!-- /all in one seo pack -->
+<link rel="alternate" type="application/rss+xml" title="なんでも独り言 » フィード" href="https://ehbtj.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="なんでも独り言 » コメントフィード" href="https://ehbtj.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="なんでも独り言 » ニキシー管時計（IN-16）を作りました のコメントのフィード" href="https://ehbtj.com/electronics/nixie-tube-clock-in-16/feed/">
+
+
+
+
+<script type="text/javascript" src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/jquery-3.3.1.min.js.descărcare"></script>
+<script type="text/javascript" src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/jquery-migrate-3.0.0.min.js.descărcare"></script>
+<link rel="https://api.w.org/" href="https://ehbtj.com/wp-json/">
+<link rel="prev" title="初納涼祭+盆休み" href="https://ehbtj.com/diary/first-summer-festival-summer-vacation">
+<link rel="next" title="早くも壊れたニキシー管時計" href="https://ehbtj.com/electronics/break-nixie-tube-clock">
+<link rel="alternate" type="application/json+oembed" href="https://ehbtj.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fehbtj.com%2Felectronics%2Fnixie-tube-clock-in-16">
+<link rel="alternate" type="text/xml+oembed" href="https://ehbtj.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fehbtj.com%2Felectronics%2Fnixie-tube-clock-in-16&amp;format=xml">
+
+
+<link rel="icon" type="image/x-icon" href="https://ehbtj.com/wp-content/themes/ample-custom/images/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://ehbtj.com/wp-content/themes/ample-custom/images/logo-phone.png">
+
+
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"></head>
+
+<body class="post-template-default single single-post postid-4265 single-format-standard  better-responsive-menu wide">
+   <div id="page" class="hfeed site btn-close">
+      <header id="masthead" class="site-header " role="banner">
+      <div class="header">
+         
+         <div class="main-head-wrap inner-wrap clearfix">
+						
+            <div id="header-left-section">
+                              <div id="header-text" class="">
+                                    <h3 id="site-title">
+												<a href="https://ehbtj.com/" id="logo_image">
+													<img src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/logo.png" width="315" height="45" onmouseover="this.src=&#39;https://ehbtj.com/wp-content/themes/ample-custom/images/logo-over.png&#39;" onmouseout="this.src=&#39;https://ehbtj.com/wp-content/themes/ample-custom/images/logo.png&#39;" alt="なんでも独り言">
+												</a>
+                     </h3>
+                  										 <p id="site-description"><img src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/logo-under.png" width="340" height="18" title="電子工作とか「つくる」のが好きな人の日々" alt="電子工作とか「つくる」のが好きな人の日々"></p>
+
+                                 </div>
+            </div><!-- #header-left-section -->
+						
+						<div class="sns-links header-sns">
+							<ul>
+								<li class="twitter"><a href="https://twitter.com/EHbtj" class="target_blank"><i></i></a></li>
+								<li class="facebook"><a href="https://www.facebook.com/ehbtj" class="target_blank"><i></i></a></li>
+								<li class="instagram"><a href="https://instagram.com/ehbtj" class="target_blank"><i></i></a></li>
+								<li class="flickr"><a href="https://www.flickr.com/photos/ehbtj" class="target_blank"></a></li>
+								<li class="tumblr"><a href="http://ehbtj.tumblr.com/" class="target_blank"><i></i></a></li>
+								<li class="rss"><a href="https://ehbtj.com/feed/" class="target_blank"><i></i></a></li>
+							</ul>
+						</div>
+
+            <div id="header-right-section">
+               <nav id="site-navigation" class="main-navigation" role="navigation">
+                  <p class="menu-toggle"></p>
+									
+                  <div class="menu-nonearchive-container"><ul id="menu-nonearchive" class="menu menu-primary-container"><li id="menu-item-7248" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-7248"><a href="https://ehbtj.com/">Home<span class="nav_sub_title">ホーム</span></a></li>
+<li id="menu-item-7222" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7222"><a href="https://ehbtj.com/about/">About<span class="nav_sub_title">このサイトについて</span></a></li>
+<li id="menu-item-7249" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7249"><a href="https://ehbtj.com/archives/">Archives<span class="nav_sub_title">アーカイブ</span></a></li>
+<li id="menu-item-7245" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7245"><a href="https://ehbtj.com/portfolio">Portfolio<span class="nav_sub_title">作品集</span></a></li>
+<li id="menu-item-7446" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7446"><a href="https://ehbtj.com/photolog">Photolog<span class="nav_sub_title">写真集</span></a></li>
+<li id="menu-item-7223" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7223"><a href="https://ehbtj.com/contact/">Conctact<span class="nav_sub_title">お問い合わせ</span></a></li>
+</ul></div>               </nav>
+
+   	      </div>
+   	   </div><!-- .main-head-wrap -->
+           	   </div><!-- .header -->
+	</header><!-- end of header -->
+   <div class="main-wrapper">
+
+      
+   <div class="single-page clearfix">
+      <div class="inner-wrap">
+         <div id="primary">
+            <div id="content">
+
+               
+                  
+<article id="post-4265" class="post-4265 post type-post status-publish format-standard has-post-thumbnail hentry category-works tag-136 tag-138 tag-in-16 tag-c">
+	<h1 class="entry-title">ニキシー管時計（IN-16）を作りました</h1>
+   
+   		<div class="entry-meta clearfix">
+						<span class="entry-date"><time class="entry-date published" datetime="2014/08/16">2014/08/16</time><time class="updated" datetime="2017/05/01">2017/05/01</time></span>
+			<span class="entry-category"><a href="https://ehbtj.com/category/electronics/works/" rel="category tag">作品</a></span>
+			<span class="entry-tag"><a href="https://ehbtj.com/tag/%e6%99%82%e8%a8%88/" rel="tag">時計</a> , <a href="https://ehbtj.com/tag/%e3%83%8b%e3%82%ad%e3%82%b7%e3%83%bc%e7%ae%a1/" rel="tag">ニキシー管</a> , <a href="https://ehbtj.com/tag/in-16/" rel="tag">IN-16</a> , <a href="https://ehbtj.com/tag/c/" rel="tag">C#</a></span>
+					</div>
+		
+	
+   <div class="entry-content">
+	 <div class="content-wrapper">
+			 
+			<figure class="post-featured-image"><img src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/c226969585a5b103f43b4263706cc854.jpg" alt="ニキシー管時計" width="630" height="200">
+</figure>			
+			<p>盆休みは暇だし何しようかなと考えて、なぜかニキシー管時計をつくろうとなったので盆休みのほとんどを時計の製作に割きましたヽ(*´∀｀)ﾉ<br>
+どんな感じにしようかなと思っていろいろ考えたのですが、基板を二段重ねしているニキシー管時計を参考に作ることに。<br>
+とは言っても真似しようにもできないところがあるので配置というかレイアウトだけを参考にしました。</p>
+<div class="extra-hatom-entry-title"><span class="entry-title">ニキシー管時計（IN-16）を作りました</span></div>
+			<div class="more-ad" style="margin-bottom:20px">
+			<p class="ad-label" style="margin-bottom:5px;">スポンサーリンク</p>
+			<!-- More Ad -->
+				
+			<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8725688109876874" data-ad-slot="1342046747" data-ad-format="auto"></ins>				
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				</div>
+					
+			<p><span id="more-4265"></span></p>
+<p><a href="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/14927796525_ccbc0f8f69_b.jpg" data-pswp-uid="1"><img class="alignnone" src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/14927796525_ccbc0f8f69_b.jpg" alt="IN-16 Nixie Clock" width="500" height="333"></a><br>
+自分で言うのもなんですがいい感じにできました。<br>
+基板を見せてもかっこ悪くないのがいいです。</p>
+<p>後ろから見るとこんな感じになっております。<br>
+<a href="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/14741080229_a2e49e204a_b.jpg" data-pswp-uid="2"><img class="alignnone" src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/14741080229_a2e49e204a_b.jpg" alt="IN-16 Nixie Clock Back" width="500" height="333"></a></p>
+<p>回路図は前作った奴の改良版みたいな感じですので省略します。<br>
+（ポートフォリオの方では公開してたり？）<br>
+回路基板はこんな感じになっています。<br>
+そこまで高密度ではないですが、たぶん今までやってきた中では細かい部類です。<br>
+<a href="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/14927754125_60767ee593_b.jpg" data-pswp-uid="3"><img class="alignnone" src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/14927754125_60767ee593_b.jpg" alt="IN-16 Nixie Clock Circuit Board" width="500" height="333"></a></p>
+<p>RTCはDS3234を使いました。<br>
+TCXOが内蔵されてて、精度が±2ppmというかなりの高精度なRTCです。<br>
+±2ppmっていうと月差５秒くらいですかね。<br>
+RTCバックアップ用の電池はなんとなくでCR2032です。<br>
+長持ちするしいいんじゃないですかね（小さい電池ホルダーが見つからなかっただけ）</p>
+<p>昇圧回路はおなじみのMC34063を使っています。<br>
+FETとかコンデンサが大きすぎてイマイチなんですが。<br>
+プログラムの書き込みは6ピンのピンヘッダから行います。<br>
+マイコンはATmega328Pですが、見て分かる通り（？）はんだ付けはものすごく大変でした。<br>
+１回ヒューズビットミスったので載せ替えましたorz<br>
+上手いこと設計されているかのようにI/Oピンに余裕がまったくありません。<br>
+表面実装品（ATmega328P-AU）じゃないとIOが足りません。<br>
+あとノイズフィルタを載せています、ノイズ怖い(´・ω・｀)<br>
+ノイズ怖いって言ってる割にベタもなくて配線はスパッゲティなんですけどね。</p>
+<p>主な機能として搭載されているのは</p>
+<ul>
+<li>自動調光</li>
+<li>カソードポイズニング防止</li>
+<li>PCの時刻と同期</li>
+</ul>
+<p>この３つです。</p>
+<p>よくあるクロスフェードは保留です。<br>
+PCの時刻と同期するためにWindowsのアプリケーションもC#で作りました。<br>
+<a href="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/9d79349132075bd829ec5f2f23716658.jpg" data-pswp-uid="4"><img class="alignnone wp-image-4266 size-full" src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/9d79349132075bd829ec5f2f23716658.jpg" alt="Windowsアプリ" width="450" height="300" srcset="https://ehbtj.com/wp-content/uploads/2014/08/9d79349132075bd829ec5f2f23716658.jpg 450w, https://ehbtj.com/wp-content/uploads/2014/08/9d79349132075bd829ec5f2f23716658-300x200.jpg 300w" sizes="(max-width: 450px) 100vw, 450px"></a><br>
+そんなに複雑なものではなくてCOMポート選んで接続してボタン押したらニキシー管と同期するだけです。<br>
+遅延時間とかまったく考えてません(ﾉ∀`)<br>
+NTPサーバーから時刻を取得してもよかったんですけど面倒くさそうなんでやめました。<br>
+これくらいのソフトなら全然いけるんですけどねえ・・・</p>
+<p>全体的には大満足です。<br>
+ユニバーサル基板を卒業したいものの大体１個しか作らないし回路変更が多いので難しいところかなと思います。<br>
+次作るならGPS搭載かWiFiでNTPサーバーの時刻を取得するかぐらいしてみたいですね。<br>
+こんな小さな基板にそれが載ればの話ですが。</p>
+<h3>後日談</h3>
+<p>GPS搭載＋アクリルケースでそれらしくなりました。<br>
+<a href="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/14940991547_c0b183dee9_b.jpg" data-pswp-uid="5"><img class="alignnone" src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/14940991547_c0b183dee9_b.jpg" alt="ニキシー管時計 アクリルケース入" width="500" height="333"></a><br>
+<a href="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/15349736442_52c8998a11_b.jpg" data-pswp-uid="6"><img class="alignnone" src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/15349736442_52c8998a11_b.jpg" alt="ニキシー管時計基板" width="500" height="333"></a></p>
+<div class="extra-hatom-entry-title"><span class="entry-title">ニキシー管時計（IN-16）を作りました</span></div>
+			<div class="bottom-ad">
+				<p class="ad-label">スポンサーリンク</p>
+				<!-- Resp Ad -->
+				<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8725688109876874" data-ad-slot="4792027547" data-ad-format="rectangle"></ins>				
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				</div>
+				</div>
+				
+				<div class="share">
+				  <h3>Share This Article</h3>
+					<div class="sns_box">
+						<a class="share_button twitter-btn" href="https://twitter.com/intent/tweet?url=https://ehbtj.com/electronics/nixie-tube-clock-in-16&amp;text=%E3%83%8B%E3%82%AD%E3%82%B7%E3%83%BC%E7%AE%A1%E6%99%82%E8%A8%88%EF%BC%88IN-16%EF%BC%89%E3%82%92%E4%BD%9C%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F%20%7C%20%E3%81%AA%E3%82%93%E3%81%A7%E3%82%82%E7%8B%AC%E3%82%8A%E8%A8%80&amp;via=EHbtj&amp;related=EHbtj" title="Tweet This" onclick="javascript:window.open(this.href, &#39;&#39;, &#39;menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600&#39;);return false;">
+						<div><span>Twitter</span></div>
+					</a>
+					<a class="share_button fb-btn" href="https://www.facebook.com/sharer.php?u=https://ehbtj.com/electronics/nixie-tube-clock-in-16&amp;t=%E3%83%8B%E3%82%AD%E3%82%B7%E3%83%BC%E7%AE%A1%E6%99%82%E8%A8%88%EF%BC%88IN-16%EF%BC%89%E3%82%92%E4%BD%9C%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F" title="Send to Facebook" onclick="javascript:window.open(this.href, &#39;&#39;, &#39;menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600&#39;);return false;">
+						 <div><span>Facebook</span></div>
+					</a>
+					<a class="share_button gplus-btn" href="https://plus.google.com/share?url=https://ehbtj.com/electronics/nixie-tube-clock-in-16" title="+1" rel="noreferrer" onclick="javascript:window.open(this.href, &#39;&#39;, &#39;menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600&#39;);return false;">
+						<div><span>Google+</span></div>
+					</a>
+					<a class="share_button hatena-btn" href="https://b.hatena.ne.jp/entry/https://ehbtj.com/electronics/nixie-tube-clock-in-16" title="このエントリーをはてなブックマークに追加" onclick="javascript:window.open(this.href, &#39;&#39;, &#39;menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=640&#39;);return false;">
+						<div><span>Hatena</span></div>
+					</a>
+					<a class="share_button pocket-btn" href="https://getpocket.com/edit?url=https://ehbtj.com/electronics/nixie-tube-clock-in-16&amp;title=%E3%83%8B%E3%82%AD%E3%82%B7%E3%83%BC%E7%AE%A1%E6%99%82%E8%A8%88%EF%BC%88IN-16%EF%BC%89%E3%82%92%E4%BD%9C%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F%20%7C%20%E3%81%AA%E3%82%93%E3%81%A7%E3%82%82%E7%8B%AC%E3%82%8A%E8%A8%80" title="Save to Pocket" onclick="javascript:window.open(this.href, &#39;&#39;, &#39;menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600&#39;);return false;">
+						<div><span>Pocket</span></div>
+					</a>
+				</div>
+				<div class="wp_likes" id="wp_likes_post-4265"><span class="text"><span style="font-weight:bold;">12</span>人の方がこの記事を「いいね」と言っています。</span><div><div class="like"><a href="javascript:wp_likes.like(4265);"><div class="like_heart"></div><p>いいね</p></a></div><div class="unlike"><a href="javascript:wp_likes.unlike(4265);"><div class="like_heart"></div><p>「いいね」を取り消す</p></a></div></div></div>			</div>
+			
+			<div class="subscribe">
+				<h3>Subscribe</h3>
+				<div class="sbs_box">
+					<a class="share_button twitter-btn target_blank" href="https://twitter.com/EHbtj">
+						<div><span>Follow</span></div>
+					</a>
+					<a class="share_button fb-btn target_blank" href="https://www.facebook.com/ehbtj">
+						<div><span>Like</span></div>
+					</a>
+					<a class="share_button rss-btn target_blank" href="https://ehbtj.com/feed/">
+						<div><span>RSS</span></div>
+					</a>
+					<a class="share_button feedly-btn target_blank" href="https://feedly.com/i/subscription/feed/https://ehbtj.com/feed/">
+						<div><span>Feedly</span></div>
+					</a>
+				</div>
+			</div>
+			
+			<div class="yarpp-related">
+	<div class="related-post">
+	<h3 id="related_post_title">Related Posts</h3>
+	<div class="related-posts">
+		<div class="related-entry">
+	<a href="https://ehbtj.com/electronics/nixie-tube-clock-in-acrylic-case">
+							<img width="100" height="100" src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/03708e62866e974e5de2ae32885e757b-100x100.jpg" class="left wp-post-image" alt="" srcset="https://ehbtj.com/wp-content/uploads/2014/09/03708e62866e974e5de2ae32885e757b-100x100.jpg 100w, https://ehbtj.com/wp-content/uploads/2014/09/03708e62866e974e5de2ae32885e757b-150x150.jpg 150w, https://ehbtj.com/wp-content/uploads/2014/09/03708e62866e974e5de2ae32885e757b.jpg 300w" sizes="(max-width: 100px) 100vw, 100px">		 
+			<span class="related-title">ニキシー管時計 in アクリルケース</span>
+	</a> 
+	</div>
+     	<div class="related-entry">
+	<a href="https://ehbtj.com/electronics/break-nixie-tube-clock">
+							<img width="100" height="100" src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/d9e811276678cd66a422e9301813a6a2-100x100.jpg" class="left wp-post-image" alt="" srcset="https://ehbtj.com/wp-content/uploads/2014/08/d9e811276678cd66a422e9301813a6a2-100x100.jpg 100w, https://ehbtj.com/wp-content/uploads/2014/08/d9e811276678cd66a422e9301813a6a2-150x150.jpg 150w, https://ehbtj.com/wp-content/uploads/2014/08/d9e811276678cd66a422e9301813a6a2.jpg 300w" sizes="(max-width: 100px) 100vw, 100px">		 
+			<span class="related-title">早くも壊れたニキシー管時計</span>
+	</a> 
+	</div>
+     	<div class="related-entry">
+	<a href="https://ehbtj.com/electronics/nixie-tube-clock-case">
+					<img src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/thumb-works.png" width="100" height="100" alt="No Image">		 
+			<span class="related-title">ニキシー管時計のケース検討</span>
+	</a> 
+	</div>
+     	<div class="related-entry">
+	<a href="https://ehbtj.com/electronics/nixie-tube-clock-gps">
+							<img width="100" height="100" src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/288ab3c4e60a58d87f77855a3da0efa6-100x100.jpg" class="left wp-post-image" alt="" srcset="https://ehbtj.com/wp-content/uploads/2014/09/288ab3c4e60a58d87f77855a3da0efa6-100x100.jpg 100w, https://ehbtj.com/wp-content/uploads/2014/09/288ab3c4e60a58d87f77855a3da0efa6-150x150.jpg 150w, https://ehbtj.com/wp-content/uploads/2014/09/288ab3c4e60a58d87f77855a3da0efa6.jpg 200w" sizes="(max-width: 100px) 100vw, 100px">		 
+			<span class="related-title">結局GPSモジュールを搭載</span>
+	</a> 
+	</div>
+     	</div>
+  </div>
+</div>
+
+			
+   </div>
+
+   </article>
+                  
+
+                  
+<div id="comments" class="comments-area">
+
+   	 
+	 <h3 class="comments-title">
+				Leave a Comment
+         		</h3>
+
+         
+
+      
+      <ul class="comment-list">
+         	<li class="pingback even thread-even depth-1" id="comment-53086">
+		<p>Pingback: <a href="http://mononichi.com/2016/03/arduinoclock/" rel="external nofollow" class="url">Arduino時計の時計合わせをしたい | まいにちものづくり</a> </p>
+	</li><!-- #comment-## -->
+      </ul><!-- .comment-list -->
+
+      
+   
+   
+   	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title"> <small><a rel="https://ehbtj.com/electronics/nixie-tube-clock-in-16/#respond" id="cancel-comment-reply-link" href="javascript:void(0)" style="display:none;">コメントをキャンセル</a></small></h3>			<form action="https://ehbtj.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="">
+				<p class="comment-form-author"><label for="author">Name</label> <br><input id="author" name="author" type="text" value="" size="30"></p>
+<p class="comment-form-email"><label for="email">E-mail</label> <br><input id="email" name="email" type="text" value="" size="30"></p>
+<p class="comment-form-url"><label for="url">URL</label><br><input id="url" name="url" type="text" value="" size="30"></p>
+<p class="comment-form-comment">
+													<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
+												</p><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Submit Comment"> <input type="hidden" name="comment_post_ID" value="4265" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"></p>			<input type="hidden" id="ak_js" name="ak_js" value="1524330973643"></form>
+			</div><!-- #respond -->
+	</div><!-- #comments -->                           </div>
+                     </div>
+
+         
+<div id="secondary" class="sidebar q2w3-fixed-widget-container" style="height: 2078px;">
+
+		
+	<div class="sns-links side-sns">
+		<ul>
+			<li class="twitter"><a href="https://twitter.com/EHbtj" class="target_blank"><i></i></a></li>
+			<li class="facebook"><a href="https://www.facebook.com/ehbtj" class="target_blank"><i></i></a></li>
+			<li class="instagram"><a href="https://instagram.com/ehbtj" class="target_blank"><i></i></a></li>
+			<li class="flickr"><a href="https://www.flickr.com/photos/ehbtj" class="target_blank"></a></li>
+			<li class="tumblr"><a href="http://ehbtj.tumblr.com/" class="target_blank"><i></i></a></li>
+			<li class="rss"><a href="https://ehbtj.com/feed/" class="target_blank"><i></i></a></li>
+		</ul>
+	</div>
+	
+	<div class="sidebar-ad"> 
+		<p class="ad-label">スポンサーリンク</p>
+		<!-- Sidebar Ad -->
+		<div class="ad-wrapper">
+			<ins class="adsbygoogle" style="display:block;max-width:100%;" data-ad-client="ca-pub-8725688109876874" data-ad-slot="9222227140" data-ad-format="rectangle"></ins>
+		</div>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	</div>
+	
+	
+   <section id="execphp-21" class="widget widget_execphp"><h3 class="widget-title">About This Site</h3>			<div class="execphpwidget"><div class="about_profile">
+	<img alt="profile" src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/about_img.png" width="100" height="100">
+	<div class="about_txt">
+	<p>
+	電子工作とか「つくる」のが好きな人が日々を綴っているブログです。<a href="https://ehbtj.com/about/">→ABOUT</a>
+	</p>
+	<p>
+	<a href="https://ehbtj.com/portfolio">Portfolio（作品集）</a>もよろしくお願いします。
+	</p>
+	</div>
+</div>
+
+<div class="about_search widget_search">
+
+<form method="get" action="https://ehbtj.com/" class="site-search">
+	<div class="search">
+		<input name="s" class="search-input" type="text" placeholder="Search">
+		<input class="submit" type="submit" value="Search">
+	</div>
+</form><!-- .searchform --></div></div>
+		</section><section id="execphp-19" class="widget widget_execphp">			<div class="execphpwidget"><ul class="tab-menu cat-tab">
+	<li class="select">Category</li>
+	<li>Tag Cloud</li>
+</ul>
+
+<div class="tab-widget tab-widget3">
+	<div class="category-list content_wrap">
+	<ul>
+			<li class="cat-item cat-item-5"><a href="https://ehbtj.com/category/diary/">日記</a>
+<ul class="children">
+	<li class="cat-item cat-item-226"><a href="https://ehbtj.com/category/diary/social-life/">社会生活</a>
+</li>
+	<li class="cat-item cat-item-321"><a href="https://ehbtj.com/category/diary/hobby-life/">趣味生活</a>
+</li>
+	<li class="cat-item cat-item-227"><a href="https://ehbtj.com/category/diary/college-life/">高専生活</a>
+</li>
+	<li class="cat-item cat-item-237"><a href="https://ehbtj.com/category/diary/my-other/">その他もろもろ</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="https://ehbtj.com/category/diary/notice/">お知らせ</a>
+</li>
+</ul>
+<span class="cat-toggle"></span></li>
+	<li class="cat-item cat-item-6"><a href="https://ehbtj.com/category/electronics/">電子工作</a>
+<ul class="children">
+	<li class="cat-item cat-item-9"><a href="https://ehbtj.com/category/electronics/arduino/">Arduino</a>
+</li>
+	<li class="cat-item cat-item-234"><a href="https://ehbtj.com/category/electronics/mcu-fpga/">マイコン・FPGA</a>
+</li>
+	<li class="cat-item cat-item-235"><a href="https://ehbtj.com/category/electronics/works/">作品</a>
+</li>
+	<li class="cat-item cat-item-253"><a href="https://ehbtj.com/category/electronics/lab/">実験室</a>
+</li>
+	<li class="cat-item cat-item-479"><a href="https://ehbtj.com/category/electronics/machine-tool/">3Dプリンタ・工作機械</a>
+</li>
+</ul>
+<span class="cat-toggle"></span></li>
+	<li class="cat-item cat-item-215"><a href="https://ehbtj.com/category/photography/">写真・カメラ</a>
+<ul class="children">
+	<li class="cat-item cat-item-229"><a href="https://ehbtj.com/category/photography/photo/">写真</a>
+</li>
+	<li class="cat-item cat-item-228"><a href="https://ehbtj.com/category/photography/camera/">カメラ</a>
+</li>
+	<li class="cat-item cat-item-230"><a href="https://ehbtj.com/category/photography/lens/">レンズ</a>
+</li>
+</ul>
+<span class="cat-toggle"></span></li>
+	<li class="cat-item cat-item-4"><a href="https://ehbtj.com/category/info/">PC・Web</a>
+<ul class="children">
+	<li class="cat-item cat-item-26"><a href="https://ehbtj.com/category/info/wordpress/">WordPress</a>
+</li>
+	<li class="cat-item cat-item-241"><a href="https://ehbtj.com/category/info/web-service/">Webサービス</a>
+</li>
+	<li class="cat-item cat-item-233"><a href="https://ehbtj.com/category/info/web-design/">Webデザイン</a>
+</li>
+	<li class="cat-item cat-item-236"><a href="https://ehbtj.com/category/info/software/">ソフトウェア</a>
+</li>
+</ul>
+<span class="cat-toggle"></span></li>
+  </ul>
+		<span class="cat-separate"></span>
+  <ul>
+		<li class="cat-item cat-portfolio">
+			<a href="https://ehbtj.com/portfolio">Portfolio</a>
+			<ul class="children">
+				<li class="cat-item cat-item-516"><a href="https://ehbtj.com/portfolio_category/work-equipment/">計測・作業用機器</a>
+</li>
+	<li class="cat-item cat-item-398"><a href="https://ehbtj.com/portfolio_category/interior/">インテリア</a>
+</li>
+	<li class="cat-item cat-item-400"><a href="https://ehbtj.com/portfolio_category/device/">装置・デバイス</a>
+</li>
+	<li class="cat-item cat-item-396"><a href="https://ehbtj.com/portfolio_category/toy/">おもちゃ・がらくた</a>
+</li>
+ 
+			</ul>
+		<span class="cat-toggle"></span></li>
+		<li class="cat-item cat-photolog">
+			<a href="https://ehbtj.com/photolog">Photolog</a>
+			<ul class="children">
+				<li class="cat-item cat-item-352"><a href="https://ehbtj.com/photo_category/animal-plants/">動物・植物</a>
+</li>
+	<li class="cat-item cat-item-347"><a href="https://ehbtj.com/photo_category/landscape/">風景</a>
+</li>
+	<li class="cat-item cat-item-349"><a href="https://ehbtj.com/photo_category/nature/">自然</a>
+</li>
+	<li class="cat-item cat-item-357"><a href="https://ehbtj.com/photo_category/trip/">旅行</a>
+</li>
+	<li class="cat-item cat-item-350"><a href="https://ehbtj.com/photo_category/street-architecture/">建物・街並み</a>
+</li>
+	<li class="cat-item cat-item-351"><a href="https://ehbtj.com/photo_category/other/">その他</a>
+</li>
+ 
+			</ul>
+		<span class="cat-toggle"></span></li>
+	</ul>
+	</div>
+	<div class="tag_cloud content_wrap disnon">
+		<div>
+			      <a href="https://ehbtj.com/tag/dropbox/" class="tag-cloud-link tag-link-12 tag-link-position-1" style="font-size: 13px;">Dropbox</a>
+<a href="https://ehbtj.com/tag/%e6%97%a5%e6%9c%ac%e6%a9%8b/" class="tag-cloud-link tag-link-94 tag-link-position-2" style="font-size: 13px;">日本橋</a>
+<a href="https://ehbtj.com/tag/lightbox/" class="tag-cloud-link tag-link-339 tag-link-position-3" style="font-size: 13px;">Lightbox</a>
+<a href="https://ehbtj.com/tag/%e3%83%ac%e3%83%bc%e3%82%b6%e3%83%bc/" class="tag-cloud-link tag-link-42 tag-link-position-4" style="font-size: 13px;">レーザー</a>
+<a href="https://ehbtj.com/tag/autopegerize/" class="tag-cloud-link tag-link-330 tag-link-position-5" style="font-size: 13px;">AutoPegerize</a>
+<a href="https://ehbtj.com/tag/%e3%82%a2%e3%83%ab%e3%83%90%e3%83%a0/" class="tag-cloud-link tag-link-221 tag-link-position-6" style="font-size: 13px;">アルバム</a>
+<a href="https://ehbtj.com/tag/%e3%83%86%e3%83%bc%e3%83%9e/" class="tag-cloud-link tag-link-213 tag-link-position-7" style="font-size: 13px;">テーマ</a>
+<a href="https://ehbtj.com/tag/%e3%82%b9%e3%83%9e%e3%83%bc%e3%83%88%e3%83%9b%e3%83%bc%e3%83%a0/" class="tag-cloud-link tag-link-558 tag-link-position-8" style="font-size: 13px;">スマートホーム</a>
+<a href="https://ehbtj.com/tag/in-19a/" class="tag-cloud-link tag-link-315 tag-link-position-9" style="font-size: 13px;">IN-19A</a>
+<a href="https://ehbtj.com/tag/%e5%86%ac%e4%bc%91%e3%81%bf/" class="tag-cloud-link tag-link-85 tag-link-position-10" style="font-size: 13px;">冬休み</a>
+<a href="https://ehbtj.com/tag/%e3%82%b8%e3%83%a5%e3%83%bc%e3%83%ab%e3%82%b7%e3%83%bc%e3%83%95/" class="tag-cloud-link tag-link-34 tag-link-position-11" style="font-size: 13px;">ジュールシーフ</a>
+<a href="https://ehbtj.com/tag/ifttt/" class="tag-cloud-link tag-link-109 tag-link-position-12" style="font-size: 13px;">ifttt</a>
+<a href="https://ehbtj.com/tag/%e3%82%a2%e3%82%b9%e3%83%88%e3%83%ad%e3%83%88%e3%83%ac%e3%83%bc%e3%82%b5%e3%83%bc/" class="tag-cloud-link tag-link-206 tag-link-position-13" style="font-size: 13px;">アストロトレーサー</a>
+<a href="https://ehbtj.com/tag/%e3%83%9f%e3%83%ab%e3%82%af%e3%82%af%e3%83%a9%e3%82%a6%e3%83%b3/" class="tag-cloud-link tag-link-141 tag-link-position-14" style="font-size: 13px;">ミルククラウン</a>
+<a href="https://ehbtj.com/tag/%e3%82%bf%e3%82%b0%e3%82%af%e3%83%a9%e3%82%a6%e3%83%89/" class="tag-cloud-link tag-link-470 tag-link-position-15" style="font-size: 13px;">タグクラウド</a>
+		</div>
+		<div>
+			      <a href="https://ehbtj.com/portfolio_tag/%e3%82%aa%e3%82%b7%e3%83%ad%e3%82%b9%e3%82%b3%e3%83%bc%e3%83%97/" class="tag-cloud-link tag-link-420 tag-link-position-1" style="font-size: 13px;">オシロスコープ</a>
+<a href="https://ehbtj.com/portfolio_tag/%e3%83%8b%e3%82%ad%e3%82%b7%e3%83%bc%e7%ae%a1/" class="tag-cloud-link tag-link-423 tag-link-position-2" style="font-size: 13px;">ニキシー管</a>
+<a href="https://ehbtj.com/portfolio_tag/vfd/" class="tag-cloud-link tag-link-424 tag-link-position-3" style="font-size: 13px;">VFD</a>
+<a href="https://ehbtj.com/portfolio_tag/%e9%9b%bb%e6%b5%81%e8%a8%88/" class="tag-cloud-link tag-link-444 tag-link-position-4" style="font-size: 13px;">電流計</a>
+<a href="https://ehbtj.com/portfolio_tag/%e5%b7%a5%e5%85%b7/" class="tag-cloud-link tag-link-511 tag-link-position-5" style="font-size: 13px;">工具</a>
+<a href="https://ehbtj.com/portfolio_tag/%e3%83%9c%e3%83%aa%e3%83%a5%e3%83%bc%e3%83%a0/" class="tag-cloud-link tag-link-427 tag-link-position-6" style="font-size: 13px;">ボリューム</a>
+<a href="https://ehbtj.com/portfolio_tag/%e3%82%bf%e3%82%a4%e3%83%9e%e3%83%bc/" class="tag-cloud-link tag-link-416 tag-link-position-7" style="font-size: 13px;">タイマー</a>
+<a href="https://ehbtj.com/portfolio_tag/%e6%96%87%e5%8c%96%e7%a5%ad/" class="tag-cloud-link tag-link-523 tag-link-position-8" style="font-size: 13px;">文化祭</a>
+<a href="https://ehbtj.com/portfolio_tag/c/" class="tag-cloud-link tag-link-507 tag-link-position-9" style="font-size: 13px;">C#</a>
+<a href="https://ehbtj.com/portfolio_tag/d%e7%b4%9a%e3%82%a2%e3%83%b3%e3%83%97/" class="tag-cloud-link tag-link-437 tag-link-position-10" style="font-size: 13px;">D級アンプ</a>
+<a href="https://ehbtj.com/portfolio_tag/%e3%81%af%e3%81%8c%e3%81%8d/" class="tag-cloud-link tag-link-428 tag-link-position-11" style="font-size: 13px;">はがき</a>
+<a href="https://ehbtj.com/portfolio_tag/ambient/" class="tag-cloud-link tag-link-491 tag-link-position-12" style="font-size: 13px;">Ambient</a>
+<a href="https://ehbtj.com/portfolio_tag/%e6%b8%ac%e8%b7%9d%e3%83%a2%e3%82%b8%e3%83%a5%e3%83%bc%e3%83%ab/" class="tag-cloud-link tag-link-522 tag-link-position-13" style="font-size: 13px;">測距モジュール</a>
+<a href="https://ehbtj.com/portfolio_tag/%e6%b0%b4%e6%99%b6%e6%8c%af%e5%8b%95%e5%ad%90/" class="tag-cloud-link tag-link-434 tag-link-position-14" style="font-size: 13px;">水晶振動子</a>
+<a href="https://ehbtj.com/portfolio_tag/in-19a/" class="tag-cloud-link tag-link-525 tag-link-position-15" style="font-size: 13px;">IN-19A</a>
+		</div>
+		<div>
+			      <a href="https://ehbtj.com/photo_tag/%e3%83%81%e3%83%a5%e3%83%bc%e3%83%aa%e3%83%83%e3%83%97/" class="tag-cloud-link tag-link-382 tag-link-position-1" style="font-size: 13px;">チューリップ</a>
+<a href="https://ehbtj.com/photo_tag/%e6%b5%b7%e5%a4%96/" class="tag-cloud-link tag-link-355 tag-link-position-2" style="font-size: 13px;">海外</a>
+<a href="https://ehbtj.com/photo_tag/%e9%ba%a6%e7%95%91/" class="tag-cloud-link tag-link-375 tag-link-position-3" style="font-size: 13px;">麦畑</a>
+<a href="https://ehbtj.com/photo_tag/%e6%a2%85/" class="tag-cloud-link tag-link-370 tag-link-position-4" style="font-size: 13px;">梅</a>
+<a href="https://ehbtj.com/photo_tag/%e6%b1%9f%e6%88%b8%e5%b7%9d/" class="tag-cloud-link tag-link-385 tag-link-position-5" style="font-size: 13px;">江戸川</a>
+<a href="https://ehbtj.com/photo_tag/%e6%b8%a9%e6%b3%89%e8%a1%97/" class="tag-cloud-link tag-link-549 tag-link-position-6" style="font-size: 13px;">温泉街</a>
+<a href="https://ehbtj.com/photo_tag/%e3%82%b0%e3%82%a2%e3%83%a0/" class="tag-cloud-link tag-link-356 tag-link-position-7" style="font-size: 13px;">グアム</a>
+<a href="https://ehbtj.com/photo_tag/%e6%ba%80%e6%9c%88/" class="tag-cloud-link tag-link-354 tag-link-position-8" style="font-size: 13px;">満月</a>
+<a href="https://ehbtj.com/photo_tag/%e8%8a%b1%e7%81%ab/" class="tag-cloud-link tag-link-380 tag-link-position-9" style="font-size: 13px;">花火</a>
+<a href="https://ehbtj.com/photo_tag/%e6%b7%a1%e8%b7%af%e5%b3%b6/" class="tag-cloud-link tag-link-454 tag-link-position-10" style="font-size: 13px;">淡路島</a>
+<a href="https://ehbtj.com/photo_tag/%e6%b5%81%e6%98%9f%e7%be%a4/" class="tag-cloud-link tag-link-366 tag-link-position-11" style="font-size: 13px;">流星群</a>
+<a href="https://ehbtj.com/photo_tag/%e6%9d%b1%e4%ba%ac/" class="tag-cloud-link tag-link-390 tag-link-position-12" style="font-size: 13px;">東京</a>
+<a href="https://ehbtj.com/photo_tag/%e3%82%b3%e3%82%b9%e3%83%a2%e3%82%b9/" class="tag-cloud-link tag-link-410 tag-link-position-13" style="font-size: 13px;">コスモス</a>
+<a href="https://ehbtj.com/photo_tag/%e7%a5%9e%e6%88%b8/" class="tag-cloud-link tag-link-381 tag-link-position-14" style="font-size: 13px;">神戸</a>
+<a href="https://ehbtj.com/photo_tag/%e8%97%a4/" class="tag-cloud-link tag-link-383 tag-link-position-15" style="font-size: 13px;">藤</a>
+		</div>
+	</div>
+</div></div>
+		</section><section id="execphp-15" class="widget widget_execphp">			<div class="execphpwidget"><ul class="tab-menu social-tab">
+	<li class="select">Twitter</li>
+	<li>Tumblr</li>
+	<li>Instagram</li>
+</ul>
+
+<div class="tab-widget tab-widget2">
+	<div class="content_wrap" id="tp_widget_recent_tweets-2">
+
+						<div>
+							<ul class="twitter_widget"><li class="tweet"><span class="status-text">暑くて部屋ではチョコを保存できない</span><span class="time-meta">2018/04/21 17:14</span></li><li class="tweet"><span class="status-text">[更新] 基板を固定するツール選び | なんでも独り言 - <a href="https://ehbtj.com/diary/select-tool-for-pcb" class="target_blank get_extended">ehbtj.com/diary/select-t…</a></span><span class="time-meta">2018/04/21 16:07</span></li><li class="tweet"><span class="status-text">買って半年たつけど、まだ輝きを維持できてる <a href="https://twitter.com/EHbtj/status/987539806820315137/photo/1" class="target_blank get_media">pic.twitter.com/0nomCnWtjl</a></span><span class="time-meta">2018/04/21 12:53</span></li><li class="tweet"><span class="status-text">資料作成&lt;-&gt;焼肉</span><span class="time-meta">2018/04/20 22:38</span></li><li class="tweet"><span class="status-text">Eagleのバージョン、9.0.0になってる
+やっぱ進化早いわ</span><span class="time-meta">2018/04/20 18:51</span></li>
+							</ul><span class="twitter_follow"><a class="rapid-twitter-btn target_blank" href="https://twitter.com/EHbtj"><span class="label">Follow me! @EHbtj</span></a></span>
+</div></div>
+<div class="content_wrap disnon" id="tumblr-widget-6">
+<ul id="tumblr_widget"><li class="tumblr_post photo" style="padding:8px 0"><div>
+<a href="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/tumblr_p7djvuHmFX1rqxi05o1_1280.jpg" class="lightbox-tumblr" data-pswp-uid="7"><img src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/tumblr_p7djvuHmFX1rqxi05o1_1280.jpg" alt="photo from Tumblr" height="100"></a></div>
+<span class="tumblr_meta">2018/04/18 09:33</span></li>
+<li class="tumblr_post photo" style="padding:8px 0"><div>
+<a href="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/tumblr_p6m169nvZo1rqxi05o1_500.jpg" class="lightbox-tumblr" data-pswp-uid="8"><img src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/tumblr_p6m169nvZo1rqxi05o1_500.jpg" alt="photo from Tumblr" height="100"></a><p>タバコは万能薬</p></div>
+<span class="tumblr_meta">2018/04/03 12:54</span></li>
+<li class="tumblr_post link" style="padding:8px 0"><div>
+<a href="https://js.tensorflow.org/" class="tumblr_link target_blank">TensorFlow.js</a></div>
+<span class="tumblr_meta">2018/04/02 15:56</span></li>
+<li class="tumblr_post photo" style="padding:8px 0"><div>
+<a href="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/tumblr_p6hzk85y8W1rqxi05o1_1280.jpg" class="lightbox-tumblr" data-pswp-uid="9"><img src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/tumblr_p6hzk85y8W1rqxi05o1_1280.jpg" alt="photo from Tumblr" height="100"></a></div>
+<span class="tumblr_meta">2018/04/01 08:28</span></li>
+<li class="tumblr_post photo" style="padding:8px 0"><div>
+<a href="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/tumblr_p65agpzk6n1rqxi05o1_1280.jpg" class="lightbox-tumblr" data-pswp-uid="10"><img src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/tumblr_p65agpzk6n1rqxi05o1_1280.jpg" alt="photo from Tumblr" height="100"></a><p>人生終わらせたいときに使える</p></div>
+<span class="tumblr_meta">2018/03/25 11:55</span></li>
+</ul>
+<span class="tumblr_follow"><a href="http://ehbtj.tumblr.com/" class="target_blank"><span>独り言のTumblr</span></a></span></div>
+<div class="content_wrap disnon" id="instagrm_widget-3">
+		<div id="instagram_widget">
+<ul>
+<li><a href="https://scontent.cdninstagram.com/vp/b9eab583399a08875a9b2f4d4e092d71/5B5557C6/t51.2885-15/s640x640/sh0.08/e35/29718186_2020162818249104_5999907224741216256_n.jpg" class="lightbox-instagram" rel="pswp-gallery" data-pswp-uid="11"><img src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/29718186_2020162818249104_5999907224741216256_n.jpg" data-src="https://scontent.cdninstagram.com/vp/10fcba9cb018379bf2d6a91fe4562829/5B66AEBB/t51.2885-15/s150x150/e35/29718186_2020162818249104_5999907224741216256_n.jpg" alt="昼から酒を飲むのを許される日
+寒いけど" title="昼から酒を飲むのを許される日
+寒いけど" class="insta_img" width="80" height="80"></a></li>
+<li><a href="https://scontent.cdninstagram.com/vp/aa111c3b0eb669b91dfe8616566d0995/5B67B0D5/t51.2885-15/s640x640/sh0.08/e35/29415905_879651678881016_534045313145503744_n.jpg" class="lightbox-instagram" rel="pswp-gallery" data-pswp-uid="12"><img src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/29415905_879651678881016_534045313145503744_n.jpg" data-src="https://scontent.cdninstagram.com/vp/b3b4e675fcfb92a2c4885a424f05b27c/5B663AF4/t51.2885-15/s150x150/e35/29415905_879651678881016_534045313145503744_n.jpg" alt="ネックレス作りました" title="ネックレス作りました" class="insta_img" width="80" height="80"></a></li>
+<li><a href="https://scontent.cdninstagram.com/vp/e54623d5cc8cf630c603515d13145507/5B9AF5AE/t51.2885-15/s640x640/sh0.08/e35/29404088_432090900567710_2315101438285447168_n.jpg" class="lightbox-instagram" rel="pswp-gallery" data-pswp-uid="13"><img src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/29404088_432090900567710_2315101438285447168_n.jpg" data-src="https://scontent.cdninstagram.com/vp/d87f9acdfaf47fe274fc3941818d681c/5B6590AA/t51.2885-15/s150x150/e35/29404088_432090900567710_2315101438285447168_n.jpg" alt="公開できなかった失敗作をばらして部品取りする" title="公開できなかった失敗作をばらして部品取りする" class="insta_img" width="80" height="80"></a></li>
+<li><a href="https://scontent.cdninstagram.com/vp/4d086f50743ebc9e79adad7de82fd89f/5B55ED59/t51.2885-15/s640x640/sh0.08/e35/29415903_1991070444479410_6753655379390889984_n.jpg" class="lightbox-instagram" rel="pswp-gallery" data-pswp-uid="14"><img src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/29415903_1991070444479410_6753655379390889984_n.jpg" data-src="https://scontent.cdninstagram.com/vp/ffd1c69e6c9de0984029fff00f6372d6/5B770724/t51.2885-15/s150x150/e35/29415903_1991070444479410_6753655379390889984_n.jpg" alt="ホワイトカｿプ" title="ホワイトカｿプ" class="insta_img" width="80" height="80"></a></li>
+<li><a href="https://scontent.cdninstagram.com/vp/dc30d6243685ebbf390308380fbe1b72/5B57DB0A/t51.2885-15/s640x640/sh0.08/e35/29094334_1743576705685233_4315519174072860672_n.jpg" class="lightbox-instagram" rel="pswp-gallery" data-pswp-uid="15"><img src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/29094334_1743576705685233_4315519174072860672_n.jpg" data-src="https://scontent.cdninstagram.com/vp/5ca1922cf34b566ae2a3ce2d8cceac15/5B61A077/t51.2885-15/s150x150/e35/29094334_1743576705685233_4315519174072860672_n.jpg" alt="怒涛のRTC買い" title="怒涛のRTC買い" class="insta_img" width="80" height="80"></a></li>
+<li><a href="https://scontent.cdninstagram.com/vp/ce95cc52b58d682ab27ccc2429f5f0de/5B53B254/t51.2885-15/s640x640/sh0.08/e35/29401649_179401712696349_1178860538684243968_n.jpg" class="lightbox-instagram" rel="pswp-gallery" data-pswp-uid="16"><img src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/29401649_179401712696349_1178860538684243968_n.jpg" data-src="https://scontent.cdninstagram.com/vp/0063f918f4071185f22486ef1b9efd27/5B6A6650/t51.2885-15/s150x150/e35/29401649_179401712696349_1178860538684243968_n.jpg" alt="フラックス使いきれてないけど新しいの買いたい" title="フラックス使いきれてないけど新しいの買いたい" class="insta_img" width="80" height="80"></a></li>
+<li><a href="https://scontent.cdninstagram.com/vp/98ed711054104fb71bf20ea1beb103dc/5B64B166/t51.2885-15/s640x640/sh0.08/e35/28754023_241123346432326_3830407793425252352_n.jpg" class="lightbox-instagram" rel="pswp-gallery" data-pswp-uid="17"><img src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/28754023_241123346432326_3830407793425252352_n.jpg" data-src="https://scontent.cdninstagram.com/vp/7b784416e8a23781e21b0d87872725b2/5B65A662/t51.2885-15/s150x150/e35/28754023_241123346432326_3830407793425252352_n.jpg" alt="Seeedで基板頼んだらステッカー入ってた" title="Seeedで基板頼んだらステッカー入ってた" class="insta_img" width="80" height="80"></a></li>
+<li><a href="https://scontent.cdninstagram.com/vp/4322b22fc1f63208f1bc42c3c9373f6d/5B550B9D/t51.2885-15/s640x640/sh0.08/e35/27576491_191336001621473_6500506927473098752_n.jpg" class="lightbox-instagram" rel="pswp-gallery" data-pswp-uid="18"><img src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/27576491_191336001621473_6500506927473098752_n.jpg" data-src="https://scontent.cdninstagram.com/vp/b874bd243539260500e1408858602232/5B71F599/t51.2885-15/s150x150/e35/27576491_191336001621473_6500506927473098752_n.jpg" alt="これは部品取り" title="これは部品取り" class="insta_img" width="80" height="80"></a></li>
+<li><a href="https://scontent.cdninstagram.com/vp/dcbd30d66ed5b101091f69cdf07a7c87/5B53462C/t51.2885-15/s640x640/sh0.08/e35/27576861_184201875677133_3329553278873632768_n.jpg" class="lightbox-instagram" rel="pswp-gallery" data-pswp-uid="19"><img src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/27576861_184201875677133_3329553278873632768_n.jpg" data-src="https://scontent.cdninstagram.com/vp/b8b2b0e3c8c2e2b65babbaa6784fbd78/5B77F828/t51.2885-15/s150x150/e35/27576861_184201875677133_3329553278873632768_n.jpg" alt="はんだめっき線買ってしまった・・・
+10年持ちそう" title="はんだめっき線買ってしまった・・・
+10年持ちそう" class="insta_img" width="80" height="80"></a></li>
+</ul>
+<span class="instagram_follow"><a href="https://instagram.com/ehbtj" class="target_blank"><span>Follow me!</span></a></span>
+</div>
+</div>
+</div></div>
+		</section><section id="execphp-22" class="widget widget_execphp" style="">			<div class="execphpwidget"><ul class="tab-menu post-tab">
+	<li class="select">Recent</li>
+	<li>Popular</li>
+	<li>Updated</li>
+</ul>
+
+<div class="tab-widget tab-widget1">
+
+	<div class="content_wrap">
+				<ul>
+						<li>
+				<div class="post-list">
+        				<a href="https://ehbtj.com/diary/select-tool-for-pcb">
+				<img src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/thumb-hobby-life.jpg" width="100" height="100" alt="No Image"><span class="post-title">基板を固定するツール選び</span>
+				</a>
+				<span class="post-date">2018/04/21</span>
+				</div>
+			</li>
+						<li>
+				<div class="post-list">
+        				<a href="https://ehbtj.com/photography/bought-smc-pentax-dfa-macro-100mm-f28-wr">
+				<img src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/thumb-lens.jpg" width="100" height="100" alt="No Image"><span class="post-title">smc PENTAX-D FA MACRO 100mmF2.8 WR を買いました</span>
+				</a>
+				<span class="post-date">2018/04/13</span>
+				</div>
+			</li>
+						<li>
+				<div class="post-list">
+        				<a href="https://ehbtj.com/electronics/touch-sensor-as-switch">
+				<img src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/thumb-arduino.png" width="100" height="100" alt="No Image"><span class="post-title">タッチセンサをスイッチとして使うプログラム</span>
+				</a>
+				<span class="post-date">2018/04/06</span>
+				</div>
+			</li>
+						<li>
+				<div class="post-list">
+        				<a href="https://ehbtj.com/diary/learning-3d-cad-at-fablab">
+				<img src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/thumb-hobby-life.jpg" width="100" height="100" alt="No Image"><span class="post-title">ファブラボで 3D CAD を学ぶことにした</span>
+				</a>
+				<span class="post-date">2018/03/30</span>
+				</div>
+			</li>
+						<li>
+				<div class="post-list">
+        				<a href="https://ehbtj.com/info/history-of-wordpress-twitter-widget">
+				<img src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/thumb-wordpress.png" width="100" height="100" alt="No Image"><span class="post-title">WordPressのTwitterウィジェットの変遷</span>
+				</a>
+				<span class="post-date">2018/03/23</span>
+				</div>
+			</li>
+					</ul>	</div>
+	
+  <div class="content_wrap disnon">
+            <ul>
+                    <li>
+            <div class="post-list">
+            <a href="https://ehbtj.com/info/pl2303-windows10">
+            <img width="100" height="100" src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/500c258b21aef4c3cc1daf158c158cb9-100x100.jpg" class="left wp-post-image" alt="" srcset="https://ehbtj.com/wp-content/uploads/2015/08/500c258b21aef4c3cc1daf158c158cb9-100x100.jpg 100w, https://ehbtj.com/wp-content/uploads/2015/08/500c258b21aef4c3cc1daf158c158cb9-150x150.jpg 150w, https://ehbtj.com/wp-content/uploads/2015/08/500c258b21aef4c3cc1daf158c158cb9.jpg 300w" sizes="(max-width: 100px) 100vw, 100px"><span class="post-title">Windows10でPL2303を無理やり動かす</span>
+            </a>
+            <span class="post-date">2015/08/17</span>
+            </div>
+          </li>          <li>
+            <div class="post-list">
+            <a href="https://ehbtj.com/electronics/sensor-digital-filter">
+            <img src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/thumb-lab.jpg" width="100" height="100" alt="No Image"><span class="post-title">センサの入力などに使うディジタルフィルタ</span>
+            </a>
+            <span class="post-date">2015/10/03</span>
+            </div>
+          </li>          <li>
+            <div class="post-list">
+            <a href="https://ehbtj.com/electronics/speedup-arduino">
+            <img width="100" height="100" src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/d8252ab82579b71af04b36262ff268a1-100x100.jpg" class="left wp-post-image" alt="" srcset="https://ehbtj.com/wp-content/uploads/2013/05/d8252ab82579b71af04b36262ff268a1-100x100.jpg 100w, https://ehbtj.com/wp-content/uploads/2013/05/d8252ab82579b71af04b36262ff268a1-150x150.jpg 150w, https://ehbtj.com/wp-content/uploads/2013/05/d8252ab82579b71af04b36262ff268a1.jpg 300w" sizes="(max-width: 100px) 100vw, 100px"><span class="post-title">Arduinoの高速化</span>
+            </a>
+            <span class="post-date">2013/05/11</span>
+            </div>
+          </li>          <li>
+            <div class="post-list">
+            <a href="https://ehbtj.com/electronics/calc-speed-rpm">
+            <img src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/thumb-lab.jpg" width="100" height="100" alt="No Image"><span class="post-title">パルスの周波数を計算して、車速と回転数を求める</span>
+            </a>
+            <span class="post-date">2016/07/30</span>
+            </div>
+          </li>          <li>
+            <div class="post-list">
+            <a href="https://ehbtj.com/electronics/arduino-software-reset">
+            <img src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/thumb-arduino.png" width="100" height="100" alt="No Image"><span class="post-title">Arduinoでソフトウェアからリセットをかける方法</span>
+            </a>
+            <span class="post-date">2016/10/16</span>
+            </div>
+          </li>        </ul>  </div>
+		
+	<div class="content_wrap disnon">
+				<ul>
+						<li>
+				<div class="post-list">
+        				<a href="https://ehbtj.com/diary/select-tool-for-pcb">
+				<img src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/thumb-hobby-life.jpg" width="100" height="100" alt="No Image"><span class="post-title">基板を固定するツール選び</span>
+				</a>
+				<span class="post-date">2018/04/21</span>
+				</div>
+			</li>			<li>
+				<div class="post-list">
+        				<a href="https://ehbtj.com/photography/bought-smc-pentax-dfa-macro-100mm-f28-wr">
+				<img src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/thumb-lens.jpg" width="100" height="100" alt="No Image"><span class="post-title">smc PENTAX-D FA MACRO 100mmF2.8 WR を買いました</span>
+				</a>
+				<span class="post-date">2018/04/13</span>
+				</div>
+			</li>			<li>
+				<div class="post-list">
+        				<a href="https://ehbtj.com/electronics/touch-sensor-as-switch">
+				<img src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/thumb-arduino.png" width="100" height="100" alt="No Image"><span class="post-title">タッチセンサをスイッチとして使うプログラム</span>
+				</a>
+				<span class="post-date">2018/04/08</span>
+				</div>
+			</li>			<li>
+				<div class="post-list">
+        				<a href="https://ehbtj.com/electronics/lcd-shield-kit">
+				<img width="100" height="100" src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/17a908ae607e74096e980bded732f193-100x100.jpg" class="left wp-post-image" alt="" srcset="https://ehbtj.com/wp-content/uploads/2011/10/17a908ae607e74096e980bded732f193-100x100.jpg 100w, https://ehbtj.com/wp-content/uploads/2011/10/17a908ae607e74096e980bded732f193-150x150.jpg 150w, https://ehbtj.com/wp-content/uploads/2011/10/17a908ae607e74096e980bded732f193.jpg 300w" sizes="(max-width: 100px) 100vw, 100px"><span class="post-title">LCDシールドキット</span>
+				</a>
+				<span class="post-date">2018/04/01</span>
+				</div>
+			</li>			<li>
+				<div class="post-list">
+        				<a href="https://ehbtj.com/electronics/calc-speed-rpm">
+				<img src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/thumb-lab.jpg" width="100" height="100" alt="No Image"><span class="post-title">パルスの周波数を計算して、車速と回転数を求める</span>
+				</a>
+				<span class="post-date">2018/04/01</span>
+				</div>
+			</li>		</ul>	</div>
+</div></div>
+		</section></div>
+      </div><!-- .inner-wrap -->
+   </div><!-- .single-page -->
+
+         </div><!-- .main-wrapper -->
+
+      <footer id="colophon">
+         <div class="inner-wrap">
+            
+
+            <div class="footer-bottom clearfix">
+               <div class="copyright-info">
+                  <div class="copyright"><span class="copy">Copyright © 2018 <a href="https://ehbtj.com/" title="なんでも独り言"><span>なんでも独り言</span></a></span><span class="copyright-separator sp1">|</span><span class="about_link"><a href="https://ehbtj.com/about/">このサイトについて</a></span><span class="copyright-separator sp2">|</span><span class="portfolio_link"><a href="https://ehbtj.com/portfolio/">ポートフォリオ</a></span><span class="copyright-separator sp3">|</span><span class="contact"><a href="https://ehbtj.com/contact/">お問い合わせ</a></span></div><!-- .copyright -->               </div>
+
+               <div class="footer-nav">
+                              </div>
+            </div>
+         </div>
+      </footer>
+      <div id="scroll-up" style="display: block;"><span></span></div>
+   </div><!-- #page -->
+	 
+	 <div id="overlay" class="btn-close">
+		 <div class="wrap">
+			<form method="get" action="https://ehbtj.com/" class="ovalay-search">
+				<div class="overlay-search">
+					<input name="s" class="overlay-input" type="text" placeholder="Enter search keywords here">
+					<button class="overlay-submit" type="submit"><i></i></button>
+				</div>
+			</form><!-- .searchform -->
+			
+			<ul class="overlay-menu">
+				<li><a href="https://ehbtj.com/"><span>Home</span></a></li>
+				<li><a href="https://ehbtj.com/about"><span>About</span></a></li>
+				<li><a href="https://ehbtj.com/archives"><span>Archives</span></a></li>
+				<li><a href="https://ehbtj.com/portfolio"><span>Portfolio</span></a></li>
+				<li><a href="https://ehbtj.com/photolog"><span>Photolog</span></a></li>
+				<li><a href="https://ehbtj.com/contact"><span>Contact</span></a></li>
+			</ul>
+			
+			<div class="sns-links overlay-sns">
+				<ul>
+					<li class="twitter"><a href="https://twitter.com/EHbtj" class="target_blank"><i></i></a></li>
+					<li class="facebook"><a href="https://www.facebook.com/ehbtj" class="target_blank"><i></i></a></li>
+					<li class="instagram"><a href="https://instagram.com/ehbtj" class="target_blank"><i></i></a></li>
+					<li class="flickr"><a href="https://www.flickr.com/photos/ehbtj" class="target_blank"></a></li>
+					<li class="tumblr"><a href="http://ehbtj.tumblr.com/" class="target_blank"><i></i></a></li>
+					<li class="rss"><a href="https://ehbtj.com/feed/" class="target_blank"><i></i></a></li>
+				</ul>
+			</div>
+			
+		 </div>
+		 <button class="close-btn"><span>Close</span></button>
+	 </div>
+	 
+   
+
+
+
+
+
+
+
+<script type="text/javascript" src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/e-201816.js.descărcare" async="async" defer="defer"></script>
+<script type="text/javascript">
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:6.0',blog:'39954719',post:'4265',tz:'9',srv:'ehbtj.com'} ]);
+	_stq.push([ 'clickTrackerInit', '39954719', '4265' ]);
+</script>
+	 <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script type="text/javascript" defer="" src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/autoptimize_e8c3925d7030d1dd8e4d80cd8d71429a.js.descărcare"></script>
+
+<!-- *´¨)
+     ¸.•´¸.•*´¨) ¸.•*¨)
+     (¸.•´ (¸.•` ¤ Comet Cache is Fully Functional ¤ ´¨) -->
+
+<!-- Cache File Version Salt:       n/a -->
+
+<!-- Cache File URL:                https://ehbtj.com/electronics/nixie-tube-clock-in-16/ -->
+<!-- Cache File Path:               /cache/comet-cache/cache/https/ehbtj-com/electronics/nixie-tube-clock-in-16.html -->
+
+<!-- Cache File Generated Via:      HTTP request -->
+<!-- Cache File Generated On:       Apr 21st, 2018 @ 10:02 am UTC -->
+<!-- Cache File Generated In:       2.58261 seconds -->
+
+<!-- Cache File Expires On:         Apr 28th, 2018 @ 10:02 am UTC -->
+<!-- Cache File Auto-Rebuild On:    Apr 28th, 2018 @ 10:02 am UTC -->
+
+<!-- Loaded via Cache On:    Apr 21st, 2018 @ 5:16 pm UTC -->
+<!-- Loaded via Cache In:    0.01025 seconds --><img src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/g.gif" alt=":)" width="6" height="5" id="wpstats"><div class="pswp" tabindex="-1" role="dialog" aria-hidden="true"><div class="pswp__bg"></div><div class="pswp__scroll-wrap"><div class="pswp__container" style="transform: translate3d(0px, 0px, 0px);"><div class="pswp__item" style="display: block; transform: translate3d(-2131px, 0px, 0px);"></div><div class="pswp__item" style="transform: translate3d(0px, 0px, 0px);"><div class="pswp__zoom-wrap" style="transform: translate3d(401.5px, 374px, 0px) scale(0.363092);"><img class="pswp__img pswp__img--placeholder" src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/14927796525_ccbc0f8f69_b.jpg" style="width: 1405px; height: 930px; display: none;"><img class="pswp__img" src="./ニキシー管時計（IN-16）を作りました _ なんでも独り言_files/14927796525_ccbc0f8f69_b.jpg" style="display: block; width: 1405px; height: 930px;"></div></div><div class="pswp__item" style="display: block; transform: translate3d(2131px, 0px, 0px);"></div></div><div class="pswp__ui pswp__ui--one-slide pswp__ui--fit pswp__ui--hidden"><div class="pswp__top-bar"><div class="pswp__counter">1 / 1</div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button><button class="pswp__button pswp__button--share" title="Share"></button><button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button><button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class="pswp__preloader"><div class="pswp__preloader__icn"><div class="pswp__preloader__cut"><div class="pswp__preloader__donut"></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class="pswp__share-tooltip"></div> </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button><button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class="pswp__caption"><div class="pswp__caption__center">IN-16 Nixie Clock</div></div></div></div></div><script type="text/javascript" src="chrome-extension://emikbbbebcdfohonlaifafnoanocnebl/js/minerkill.js"></script></body></html>

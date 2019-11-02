@@ -1,0 +1,804 @@
+
+<!-- saved from url=(0043)http://www.mcamafia.de/nixie/ncp_en/ncp.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><title>My Nixie Clock Project</title>
+</head><body background="./My Nixie Clock Project_files/crapbook.gif" bgcolor="white" link="blue" text="black" vlink="red">
+
+
+
+<!---
+--->
+<script language="JavaScript">
+
+<!-- Hide script
+
+function CalChart(form) {
+
+form.URA.value = (form.UB.value - form.UA.value)*1;
+form.RA.value = ((form.URA.value / (form.IK.value / 1000))*1) / 1000;
+form.PRA.value = (form.URA.value * (form.IK.value / 1000))*1;
+
+}
+
+//-->
+
+</script>
+<center>
+<table border="0" width="640">
+  <tbody>
+    <tr>
+      <td>
+      <center><font size="+4"><b>My Nixie Clock Project</b></font><br>
+      <font size="+1"><b><i>by Peter H. Wendt</i></b></font><br>
+      <br>
+      <b><tt>Rel. 0.9.5_en, Last Update: Wednesday, 2009-11-18</tt></b>
+      </center>
+      <br>
+      <center>
+      <hr noshade="noshade"></center>
+      <br>
+      <br>
+      <b>Most common question: "Your <i>what</i> Clock Project ?"</b><br>
+      <br>
+      <p align="justify">Before Light-Emitting Diodes (LEDs) and Liquid
+Crystal Displays (LCDs) the electronic industry used cold-cathode tubes
+for displaying numbers, symbols and even characters. Even though they
+are called "tubes" they differ from "radio tubes" by having no heater
+wire to heat the cathode - and therefore run much colder. They do have
+a glass envelope but unlike to (most) tubes they are not empty: they
+are filled with a gas compound, mainly neon gas. If you apply a voltage
+between the anode (+ pole) and one of the cathodes (- poles) the
+character-shaped cathode is covered with a pink to orange discharge
+glow.<br>
+"NIXIE" was a trademark from Burroughs Corp. for their numeric display
+tubes. It is rumoured that they invented this kind of tube - or at
+least they got patents for it. There were many different types of these
+tubes: viewed from the side, viewed from the top, small ones, big ones,
+giant sized, types where a neon glows through a character-shaped mask
+and arrays of multiple nixies with multiplexed wires. Even early
+"multi-segment" types were available, capable to display letters like
+the later LED 7-segment arrays.</p>
+      <br>
+      <center>The animation below shows the button-like, top-viewed
+ZM1020.<br>
+It is a Nixie with 15 mm (0.6") character height.<br>
+      <br>
+      <img src="./My Nixie Clock Project_files/zm1020sa.gif" alt="ZM1020 Animation" border="0" height="120" width="160"></center>
+      <br>
+      <br>
+      <center>
+      <hr noshade="noshade" width="300"></center>
+      <br>
+      <b>You got the idea, right ?<br>
+Now for some technical theory.</b><br>
+      <br>
+Basically these Nixie tubes are very simple devices. The following
+schematic will explain, how they work.<br>
+      <br>
+      <center><img src="./My Nixie Clock Project_files/nix_th01.jpg" alt="Nixie Tube Principle of Operation" border="0" height="435" width="500"></center>
+      <br>
+      <p align="justify">If you apply a voltage U<small>b</small> the
+voltage drops across the current-limiting resistor when one of the
+cathodes K0 - K9 is tied to GND. The corresponding number-shaped
+cathode is then covered with a pink to orange glow. The values for the
+minimum U<small>b</small>, the anode voltage U<small>a</small> and the
+cathode current I<small>k</small> needs to be taken from the nixie tube
+datasheet, but you can estimate 140 VDC for U<small>a</small> and 2 mA
+for I<small>k</small> as good starting values for most nixies.<br>
+      <br>
+If your U<small>b</small> is about 220 VDC a 47K resistor / 0.5 Watts
+will do for some testings.<br>
+The <a href="http://www.mcamafia.de/nixie/misc/zm1080.pdf">datasheet for the very common ZM1080
+/ 1082</a> says that U<small>b</small> should be at least 170 VDC and
+the I<small>k</small> should settle at around 2 mA. U<small>a</small>
+will then establish at about 140 VDC "maintaining" voltage (noted as V<small>m</small>
+in the datasheet). The difference between U<small>b</small> and U<small>a</small>
+is the U<small>ra</small> that drops across the limiting resistor.<br>
+      <br>
+For a simplification we assume that the anode current I<small>a</small>
+is equal to the cathode current I<small>k</small> - you will have to
+tie only <b>one</b> cathode pin to GND at one time anyway. Nixies that
+use a "primer current" for faster ignition response have uneven anode
+and cathode currents. But we may leave that aside here.<br>
+      <br>
+Advantage: If you rig a multimeter in Milli-Amperes range into the
+(common) anode line during the testing you can track the current
+through the Nixie tube while connecting the cathode pins or leads to
+GND - without needing to meddle around with the meter wires. The unused
+cathode pins are left open (the term "floating" is used often). You
+will be able to measure voltages up to U<small>a</small> on the pins
+not connected.<br>
+Further advantage: if you have several Nixies in a circuit, these have
+all one common U<small>b</small> wire. If you install a mA-Meter in
+that line you get the total current drawn for all nixies. And can
+assume that the individual current is total current divided by the
+number of tubes you are using. This is not <i>absolutely</i> true -
+but we won't win the Noble Prize with a very precise research on that
+anyway.<br>
+      <br>
+      <b><i>Some quick maths to calculate the values for the limiting
+resistor</i></b><br>
+      <br>
+      <font face="courier"><font size="-1">U<small>ra</small> = U<small>b</small>
+- U<small>a</small> -&gt; 220 V
+- 140 V = <font color="red"><b>80 VDC</b></font><br>
+      <br>
+R<small>a</small> = U<small>ra</small> / I<small>a</small> -&gt; 80 VDC
+/ 0.002 A = <font color="red"><b>40.000 Ohms</b></font><br>
+      <br>
+P<small>ra</small> = U<small>ra</small> * I<small>a</small> -&gt; 80
+VDC * 0.002 A = <font color="red"><b>0.16 Watts</b></font><br>
+      <br>
+      </font></font>Since there is no 40 KOhms resistor in the range of
+ordinary E24 5%
+standard resistors it will surely do if you pick a 43 KOhms type 0.25
+Watts here, not to exceed the 2 mA cathode current.<br>
+      <br>
+      </p>
+
+      
+<center>
+<font size="+3"><b>Calculation</b></font><br>
+<font size="+2"><b>for the Nixie Anode-Resistor</b></font><br>
+<br>
+
+<table cellspacing="2" cellpadding="2" bgcolor="#FAFC4C">
+<tbody><tr><td align="center">
+
+
+<table cellspacing="1" cellpadding="2">
+<form name="calculations"></form>
+<tbody><tr><td><b>&nbsp;Supply Voltage U<small>b</small>&nbsp;</b></td><td><input type="text" name="UB" size="5" value="220"> <b>V</b></td></tr>
+<tr><td><b>&nbsp;Anode Voltage U<small>a</small>&nbsp;&nbsp;</b></td><td><input type="text" name="UA" size="5" value="140"> <b>V</b></td></tr>
+<tr><td><b>&nbsp;Cathode Current I<small>k</small>&nbsp;</b></td><td><input type="text" name="IK" size="5" value="2.0"> <b>mA</b></td></tr>
+
+
+<tr bgcolor="#F46C6C"><td align="right"><b>U<small>ra</small>&nbsp;:&nbsp;</b></td><td><input type="text" name="URA" size="5" onfocus="this.blur() "><b> V</b></td></tr>
+<tr bgcolor="#F46C6C"><td align="right"><b>R<small>a</small>&nbsp;&nbsp;:&nbsp;</b></td><td><input type="text" name="RA" size="5" onfocus="this.blur() "><b> K<img src="./My Nixie Clock Project_files/ohm.gif" width="14" height="14" border="0"></b></td></tr>
+<tr bgcolor="#F46C6C"><td align="right"><b>P<small>ra</small>&nbsp;:&nbsp;</b></td><td><input type="text" name="PRA" size="5" onfocus="this.blur() "><b> Watt</b></td></tr>
+
+<tr><td>&nbsp;</td></tr>
+
+<tr>
+<td align="left">&nbsp;<input type="button" value=" Calculate " onclick="CalChart(this.form) "></td>
+<td align="right"><input type="reset" value="Reset Cells">&nbsp;</td>
+</tr>
+
+</tbody></table>
+
+</td>
+</tr>
+</tbody></table>
+
+</center>
+<br>
+
+
+      <p align="justify">If you just press [Calculate] the values for
+the given U<small>b</small>, estimated U<small>a</small> and the given
+cathode current I<small>k</small> are used and the output is the
+current across the anode resistor U<small>ra</small>, the resistor
+value in Kilo-Ohm and the thermal loss P<small>ra</small> of the
+resistor in Watt.<br>
+For your own calculation just overwrite the values in the upper 3 lines
+with what you need and then click on [Calculate] again. <br>
+      <br>
+      </p>
+      <center>
+      <hr noshade="noshade" width="300"></center>
+      <br>
+      <b>220 VDC is quite a bit. How to get them <i>safely</i> ?</b><br>
+      <br>
+      <p align="justify">Well ... the professional approach is to have
+either a special transformer for the required voltages or at least an
+isolated 1:1 ratio separation transformer. If you live in the "low
+voltage" areas of the world where 110 VAC is the usual AC mains voltage
+you <i>may</i> survive a shock from the life wire. If you life in the
+"high voltage" areas like here in Germany the 230 VAC line voltage will
+surely kill you if you accidentially happen to be good grounded. A 1:1
+transformer isolates the input voltage from the output voltage so you
+are not directly connected to AC mains. The 230 VAC that goes in comes
+out as 230 VAC - but you have no connection to Earth (GND) when
+touching any wire. You are -nontheless- toasted if you touch <i>both</i>
+wires at one time.<br>
+The professionals phrase is "galvanically separated" - it is good to
+know that.<br>
+      <br>
+Separation transformers are usually big, heavy and expensive. Not as
+expensive as your life of course, but enough to blow a budget. In our
+case however we don't need Kilowatt capabilities. A few Watts will do -
+so we can build our own separation transformer by simply using two
+small transformers "Back to Back".<br>
+      <br>
+The graphic below will show this simple solution.<br>
+      <br>
+      </p>
+      <center><img src="./My Nixie Clock Project_files/nix_psu1.jpg" alt="Nixie Clock Power Supply" border="0" height="331" width="600"></center>
+      <br>
+      <br>
+      <p align="justify">The transformers can be simple, relatively
+cheap print-type transformers with greater 4 Watts output power. The
+ones I used on my prototype clock are rated 4 VA (Volt-Amperes) with a
+single 230 V primary input and a single 12 V / 300 mA output. If you
+cannot get those - take two with e.g. 15 VAC or two with 8 V AC. The
+"intermediate voltage" between the two is of lesser importance, it is
+used for the logic board only. But at least the "one on the right side"
+must have a 230 V coil.<br>
+If you have two different transformers: the bigger (stronger) one must
+be the one connected to AC-mains. You cannot run a 10 Watt transformer
+from a 5 Watt type back to back for example. The 10 Watt has a lower
+resistance for the secondary coil - and the 5 Watt secondary coil is
+then overloaded. At least when you add load to it. It may work for some
+time however, but not reliably.<br>
+      <br>
+The 4 diodes 1N4001 for the low voltage circuit can be replaced by a
+block rectifier like the B40-C1000 for instance; the 4 diodes 1N4007
+for the high voltage part can be substituted by e.g. a B1000-C125
+rectifier bridge. This rectifier(s) must be capable to run continously
+with 350 V at least, so the <i>minimum</i> were a 1N4004 (rated 400V).<br>
+      <br>
+Other than that there are no secrets in that circuit. The 100 KOhms
+parallel to the 10 µF/ 350 V capacitor in the HV part helps - for
+safety - discharging the capacitor when no load is placed across the
+output. That's all. For your own pleasure you may add a 1 KOhms
+resistor at the +12V output and a red LED ... to remind you to the fact
+that the power supply is switched on.<br>
+      <br>
+      <a href="http://www.mcamafia.de/nixie/images/nix_psu2.jpg"><img src="./My Nixie Clock Project_files/nix_psu2_s.jpg" valign="top" alt="Nixie Clock Power Supply Proto - Click for bigger image" align="left" border="0" height="120" hspace="10" vspace="0" width="160"></a>With
+my two 4-Watt Transformers I get 15 V AC in idle between the
+transformers, 210 V AC idle voltage at the HV end. Also in idle the
+DC-voltages across the rectifiers are 18.5 V resp. 290 V DC. The high
+voltage however drops down to about 200 VDC when loaded with 4 x ZM1080
+or 4 x ZM1020 Nixies and a total of 4.8 mA current drawn. A power
+supply built like that will suffice to play around with various types
+of Nixie tubes and get some insights on how they work.<br>
+      <br>
+      <b>Important: Security - and some useful hints</b><br>
+      <br>
+      </p>
+      <p align="justify">If you use a power supply like that above you <i>will</i>
+need a medium-blow 0.315 Amps fuse in one of the AC main wires for
+protection when -in the worst case- the transformer goes south. You
+should also install the whole power supply unit in a plastic case so
+that it is factically impossible to touch any AC-line wire. That unit
+shown above is <i>a prototype</i> not intended to be really used that
+way.<br>
+      <br>
+If you can get one of these "wall wart" transformers that have about
+500 mA at 12V <u><b>AC</b></u> you are fine off. In this case you only
+need one transformer in the clock itself and a power socket where the
+AC-Adapter plugs to. For the above schematic the left-hand transformer
+is your external wall adapter and the AC-input socket connects to the
+points marked with "X" and "Y" then.<br>
+Some DC-Adapters can be reworked: if you can open the case of it
+without destroying it - just unsolder the diodes and the filter
+capacitor that can be found in most of them and connect the output
+wires directly to the secondary side of the transformer. Then you only
+need the part of the power supply further above that is right from the
+left (input) transformer. The 12 V AC (or 8 or 9 or whatever) comes
+from the wall-wart and your second transformer must be choosen
+accordingly. And -if you go lower- the 7812 must be replaced by e.g. a
+7508 (8 V output) or 7805 (5 V output). The circuit itself doesn't care
+much when running with anything between +5 and +15 V DC.<br>
+      <br>
+If you opt for that solution you can make your clock case from "more
+dangerous material", like steel, copper, sheetmetal, carbon-fibre or
+anything else conductive. You don't have the AC line fed into the unit
+and the worst thing that can happen is, that you shorten your
+electronics elsewhere and it simply doesn't work -or- damages the
+transformer(s).<br>
+      <br>
+      </p>
+      <center>
+      <hr noshade="noshade" width="300"></center>
+      <br>
+      <b>Okay - but why building a <i>clock</i> from these Nixies ?</b><br>
+      <br>
+      <p align="justify">Good question. Today you can pick a lot cheapo
+LCD clocks from supermarkets for a few bucks. But - how do they look ?
+Simply boring.<br>
+Go back to the Nixie animation further above. Look at it for a while
+and I'm sure you can spot the difference.<br>
+I built digital counters and clocks with LED 7-segment displays and
+74xx TTL-chips already in the 70's. The commercial clocks used
+ready-made circuits, offered alarm and such, but they looked cheesy
+cheap - didn't match my taste - and those who did were horribly
+expensive. So I made my own desktop clock.<br>
+Same reason for the Nixie Clock: a custom-made case, antique looking
+glass tubes somewhere in it or placed on top - a wide variety of
+possibly creative, unusual designs. You can make it from all material
+you'd always wanted to build a clock from. Wood, steel, acrylic
+plastic. Transparent, translucent or granite-solid.<br>
+However: the Nixie Clock described here is <i>Just A Clock</i>. Not a
+stop watch, timer, alarm clock or anything like that. You <i>may</i>
+add some "Bells and Whistles", but due to the nature of the circuitry
+it might be a bit complicated. More on that later.<br>
+      <br>
+      </p>
+      <center>
+      <hr noshade="noshade" width="300"></center>
+      <br>
+      <b>Getting started with it: the proper timing</b><br>
+      <br>
+      <p align="justify">Heart of any clock is a source for a timing
+signal. Cheap AC-powered alarm clocks use the 50 or 60 Hz AC line to
+generate a more or less accurate clock-signal from it. Usually that
+would do - given that the accuracy <i>over the whole year</i> on the
+AC-line is within a 1 % range. Nontheless I'd decided not to use that.
+First reason was to be independent from the AC frequency. Secondly a
+crystal oscillator offers even better accuracy than line-AC and third I
+had a circuit at hand anyway I used for a couple of applications in the
+past. Main advantage: it operates with a generic 32.768 KHz mini
+crystal widely available - and comes out with a 1 Hz timing pulse. The
+schematic below shows the circuit.<br>
+      <br>
+      </p>
+      <center><img src="./My Nixie Clock Project_files/nix_1hz.jpg" alt="Nixie Clock Timing Generator" border="0" height="352" width="600"></center>
+      <br>
+      <br>
+      <p align="justify">There are two resistors: R1 acting as
+current-limiting resistor and R2 bias resistor. This latter one is a)
+dependent to the circuit voltage applied to the 4060 divider chip and
+b) dependent to the current flow through the crystal and its capacity.
+I made good results with either omitting this one or using a 10
+Mega-Ohms to start with. Your individual mileage may vary.</p>
+      <p align="justify"><img src="./My Nixie Clock Project_files/crystal1.jpg" alt="miniature crystal" valign="top" align="right" border="0" height="129" hspace="10" vspace="0" width="171">The crystal I used is
+a miniature clock crystal X1 in a round case with 19 pF internal
+capacity. The "tie-up" capacitor C1 is a low-loss ceramic type, the
+trimmer capacitor C2 is a standard plastic type. With a frequency
+counter connected to the 4060's pin 9 you can measure the buffered
+crystal frequency and adjust it to read exactly 32.768 Hz.<br>
+      </p>
+      <p align="justify">The 4013 RS Flipflop is used to divide the 2
+Hz from the 4060 down to
+the 1 Hz base clock. The second half of the 4013 might be used to
+divide the 8 Hz signal at pin 1 down to 4 Hz for a "fast forward" set
+mode - not shown here however. If you are not using the second half of
+the 4013: tie the pins 8, 10 and 11 to GND and connect 9 and 12. Pin 13
+stays open. If you decide to use the 4013 pin 11 is your input, 13 the
+output.<br>
+      <br>
+It is highly recommended to keep the wires of the components (caps and
+resistors) short trimmed and the leads between the components as short
+as possible. If the oscillator fails to start up or dies after several
+seconds: make the bias resistor larger. It may go up to 10 MOhm with
+these miniature crystals - or even left away. The bigger HC-style
+crystals with higher internal capacity may require 100 KOhm - 1
+MOhm bias resistors. If you don't want a trimmer capacitor you may use
+a ceramic capacitor of the same value as C1 as well. Doesn't hurt the
+overall accuracy that much.</p>
+      <p align="justify"><br>
+In the meantime - after I edited this page for the last time - I had
+built numerous oscillators with the 4060 and got a lot responses from
+other folks.&nbsp; Alternative concepts for the trimmer position,
+values of R1 and R2 and the C1 and C2 have been discussed.<br>
+Usually you have a datasheet for the mini xtal X1 to start with. This
+datasheet shows the internal capacity - which *use to be* about 16 -
+19pF.<br>
+The value for the tie-up cap C1 should be 2x the xtal capacity. 39pF
+fits quite nicely here.<br>
+The value for C1 should be [xtal capacity &lt; C2 &lt; 3x xtal
+capacity], where 5 - 50pF covers the entire range.<br>
+Determining the values for R1 and R2 is more tricky.<br>
+While R2 could be ommitted in the best case for very dense packing of
+components R1 is essential for the clean function here. If it is too
+high
+the xtal fails to start - if it is too low the xtal enters "overtone
+mode" and the oscillator output frequency is either totally erratic or
+way higher than supposed.<br>
+For R1 220KOhm has prooved to be a good value, R2 should be 10M. If you
+have xtals larger than these micro-types your R1 needs to be reduced -
+down to 2K2 for a HC32 xtal and R2 might be reduced to 4M7 for stable
+operation.</p>
+      <p align="justify">The 4060 allowes to run at up to 4MHz @ 15V
+supply. If you have too much room and wouldn't care about two more 4017
+dividers: pick a 3.2768 MHz xtal, leave R1 away or reduce it to 2K2, R2
+to 10M, C1 to 22pF and install a 2 - 22pF trimmer. You get 200Hz at
+the Q13 - divided by 2 in the 4013 for 100Hz.&nbsp; Add two more
+4017s&nbsp; and you are again at 1Hz with -probably- higher stability
+due to the higher reference frequency. However: you should not test the
+4060 frequency at pin 9. The probe capacity will alter the result. You
+should test at O4 (pin 7) and your counter should read 204.800 Hz. The
+trimmer allows a change of about +/- 25 Hz. If you don't have one
+adjust C2 to the center, where about the half of the static "leafes"
+are visible. That will do to for most cases.<br>
+      </p>
+      <p align="justify"><br>
+      </p>
+      <center>
+      <hr noshade="noshade" width="300"></center>
+      <br>
+      <b>Step by Step: the dividers (Seconds, Minutes and Hours)</b><br>
+      <br>
+At that point we've got to hold for a moment and think about a basic
+design question:<br>
+      <i>"Do we want a seconds display or only minutes and hours ?"</i><br>
+      <br>
+In either case we need two 60-stage dividers. Building a clock without
+a seconds display saves room and driver transistors. Let's have a look
+at this part of the circuit.<br>
+      <br>
+      <center><img src="./My Nixie Clock Project_files/nix_sdiv.jpg" alt="Nixie Clock Seconds Divider Stage" border="0" height="357" width="600"></center>
+      <br>
+      <br>
+      <p style="text-align: justify;">The CMOS chip 4017 is a "5-stage
+Josephson
+decade counter" with built-in code converter. Each low-to-high
+transitition (= "positive edge") on the clock input 14 advances the
+counter one position up from Q0 to Q9, which go to high level then. A
+logical "1" signal on the reset input 15 sets it back to Q0.<br>
+To count the seconds properly we have to pull the first counter reset
+to GND with a 100K resistor, which causes the counter to count from 0
+to 9 with every clock signal. At 9 it jumps back to 0 with the next
+clock pulse and the "Carry Out" signal at pin 12 changes from "0" to
+"1", which counts the second counter one position up. The second
+counter has the Q6 output wired to the reset pin. After the 59th clock
+pulse it jumps back to "00". Any of the "Carry Out" signals changes
+back from "1" to "0" after receiving the positive edge of the 6th clock
+pulse.</p>
+      <div style="text-align: justify;">The capacitors on each pin 16
+are local buffer caps only. They are there to reduce the effect of
+local voltage sags. This is mainly an issue when the circuit is built
+on experimental board or with no board at all. Given you have a stable,
+clean supply voltage it will surely suffice to leave them away or add
+one or two of them on the chips farthest away from the point where the
+supply voltage is fed into the circuit.<br>
+      <br>
+The "100nF" rating seems to be a tad uncommon to some people.
+It has been brought to my attention that it may lead to some confusion
+and I had been asked if I meant "microfarad" instead (but didn't have
+the proper sign). No - it is Nanofarad. Or - alternatively - I could
+use "0.1 µF" here to clarify what I meant.<br>
+      <br>
+The Seconds Divider is followed by the Minutes divider. Looks
+in most
+of it like the Seconds Divider - but the In and Out is named different.
+Functionally they are alike.<br>
+      </div>
+&nbsp;<br>
+      <center><img src="./My Nixie Clock Project_files/nix_mdiv.jpg" alt="Nixie Clock Minutes Divider Stage" border="0" height="357" width="600"></center>
+      <br>
+      <br>
+      <p align="justify">Now comes a tricky part. In Europe (where I
+live) we have a 24-hours display. We're not "AM/PM" guys over here. 24
+is a bit hard to decode, since it is neither a roll-over nor is it just
+a single digit rollover. So note the reset-logic here. It is a
+wired-AND with 2 NPN-transistors that pull the Master Reset up when a
+"4" appears in the LSB while there is a "2" on the MSB hours display.
+Neat, eh ?<br>
+      <br>
+      </p>
+      <center><img src="./My Nixie Clock Project_files/nix_hdiv.jpg" alt="Nixie Clock Hours Divider Stage" border="0" height="395" width="600"></center>
+      <br>
+      <br>
+      <p style="text-align: justify;">Also note the 10 µF
+capacitor, the
+1N4148 diode and the 100K resistor. These three form the "Power-On
+Reset" circuit that pulls the Master Reset line up for some time after
+a power on occured to bring the counters to all-Zero displays. It <i>might</i>
+be unneccessary - but you never know with these CMOS counters.<br>
+The carry-out signal from the last counter might be used to create a
+"Day of Week" display with another 4017 and e.g. a backlighted
+frontpanel. Be creative.<br>
+      </p>
+      <p style="text-align: justify;"><br>
+If you decide to have "US-style" AM-PM display you will have
+to slightly modify the hours divider.<br>
+      </p>
+      <p style="text-align: justify;">The counting on the hours display
+does not start at 00:00 but at 01:00. All numerals need an offset. The
+Q0 output sets the "1", the Q1 output the "2" and so forth. Due to that
+you have to move the input of the 10-hours from the "Carry Out" (pin
+12) to the pin 11, which advances the 10-hours with every transition
+from "9" to "0".<br>
+While the counting resets at one minute after "12:59" at "13" in the
+hours display (and not at "24" after "23:59") you need to alter signal
+for the Wired-AND to the reset the hours stage to pin 2 on the 10-hours
+and pin 4 on the 1-hours.<br>
+      </p>
+      <center><img src="./My Nixie Clock Project_files/nix_hdix.jpg" alt="Nixie Clock AM / PM Latch" style="border: 0px solid ; width: 620px; height: 418px;"></center>
+      <br>
+      <br>
+      <center>
+      <hr noshade="noshade" width="300"></center>
+      <br>
+      <b>More power: Driving the Nixies</b><br>
+      <br>
+      <p align="justify">Problem with the Nixies is the relatively high
+voltage they operate with. Each cathode pin that is not grounded is
+pulled up due to the electron migration inside the gas-filled tube to
+near the anode voltage U<small>a</small>. This may be 140 VDC - or
+above on some types. A circuit that pulls down a cathode from this
+"idle voltage" to GND must be capable to handle it. If you use a NPN
+transistor the Emitter (E) is tied to GND and the Collector (C) is
+connected with one of the cathode pins. The Base (B) is connected to
+the counter outputs via an appropriate current-limiting resistor. The
+"Collector / Base Voltage with open Base" U<small>cb0</small> specs for
+the transistor must be higher than the idle voltage on the cathodes.
+That's the voltage a transistor can handle when being not conductive (=
+not switched on). This disqualifies most common transistors, since
+their U<small>cb0</small> is only 15 - 60 Volts.<br>
+      <br>
+But - there are matching transistors available. Namely those designed
+for TV-purposes (video stage, color final stage, deflection circuits)
+or various HF and switching transistors can be used. If you have access
+to a listing of transistors with their base data you will easily find
+some matching types. Most common and low-cost transistor is the
+MPS-A42, which is a NPN transistor with U<small>cb0</small> = 300 V, I<small>c</small>
+= 0.5 Amp and P<small>tot</small> = 0.625 Watts designed for TV video
+stages. In Germany we pay 0.08 Euro (about 7 cents) for one - comes
+cheaper if you buy 100 for example.<br>
+Also useable are BF118, BF179C, BF259, BF338, BSS48, BUW37 (all with a
+metal-can case) or BF413, BF420A, BF422A, BF483 (plastic case), AT1,
+AT2, DC or NMPSA-42 (SMD types) to name a few.<br>
+      <br>
+Alternatively you could tie down all cathodes to GND with a resistor of
+100 KOhms to reduce the idle voltage - without starting the cathodes to
+glow already. In this case a more versatile transistor with a U<small>cb0</small>
+of least 65V like the BC174B or BC546 or BC846 should do. However - you
+need 3 times more resistors.<br>
+      <br>
+The schematic below explains the different driver circuits.<br>
+      <br>
+      </p>
+      <center><img src="./My Nixie Clock Project_files/nix_drv.jpg" alt="Nixie Clock Driver Circuits" border="0" height="386" width="600"></center>
+      <br>
+      <br>
+      <p align="justify">The left circuit is the pure simplicity: only
+one 33 K resistor between the counter output and the base of the
+transistor. While in the circuit on the right you have an additional
+voltage divider with a 47 K / 4.7 K resistor between the counter output
+and the base plus an additional 100 K "pull down" resistor that reduces
+the voltage between the turned-off cathode and GND.<br>
+To tell the truth: I didn't bother much with the circuit on the right
+side. In fact I got the idea from an old TV program display circuit
+that uses Nixie tubes. But the MPS-A42 transistors are fairly cheap and
+there's no need to switch to some low(er) voltage types, which aren't
+much cheaper - if at all. But maybe you happen to have several hundreds
+of them around ... feel free to use them.<br>
+      <br>
+The circuit itself is simple: the positive signal from the counter
+output passes the current-limiting 33 K resistor and turns on the
+Collector-Emitter path, which then grounds the cathode pin of the
+nixie. This turns on the neon glow for that cathode.<br>
+      <br>
+      </p>
+      <center>
+      <hr noshade="noshade" width="300"></center>
+      <br>
+      <b>Under Control: Switches for setting the clock</b><br>
+      <br>
+      <p align="justify">Since this clock is only a counter it does not
+get the time "by automatic". However: since it has "Auto-Zero" function
+you could try plug it in at midnight exactly ... <br>
+So we need switches. I like clocks where minutes and hours can be set
+independently. And which has <i>not</i> to cycle through the entire
+24-hours-counting in fast forward and then set the "finetuning" with a
+slow mode switch. I prefer setting the minutes, then the hours. Once I
+goof on that I don't need to re-run once again. And again. Maybe.<br>
+      <br>
+The solution is pretty simple. Two toggle switches, one between the
+seconds and minutes divider and one between the minutes and hours
+divider will do the trick. Look here:<br>
+      <br>
+      </p>
+      <center><img src="./My Nixie Clock Project_files/nix_swt.jpg" alt="Nixie Clock Setup Switches" border="0" height="389" width="600"></center>
+      <br>
+      <br>
+      <p align="justify">The common contact on either switch is
+connected to the input of the counter to set (minutes or hours). The
+resistor / capacitor combination debounces the switch a bit to avoid
+"scrolling" when switching back from set to run mode.<br>
+The upper (NC - now closed) contact is connected with the output of the
+previous counter. The Diode is for decoupling. It is not always
+neccessary, but might help avoiding problems, when the switch has
+"take-over" contacts that close <i>both</i> contacts momentarily while
+toggling.<br>
+The lower (NO - Now open) contact is connected with the 1 Hz base clock
+from the 1Hz-Generator. If the clock is too slow for your feel
+(especially on the minutes count-up) feel free to use the 2 Hz from the
+Pin 3 (Q13) of the 4060 directly or even use the 4 Hz signal that can
+be generated from pin 1 (Q11) of the 4060 and the second half of the
+4013 Flip-Flop. Or use pin 2 (Q12) on the 4060, which offers 4 Hz
+already.<br>
+      <br>
+      </p>
+      <center>
+      <hr noshade="noshade" width="300"></center>
+      <br>
+      <b>Ticking the seconds: A blinking colon</b><br>
+      <br>
+      <p align="justify">Those who opted to build a 4-digit clock with
+Hours and Minutes only (and save 16 transistors and 16 resistors at
+least) may wish to have something that indicates the seconds pacing on.
+Analogous to the odd blinking ":" on other digital watches.<br>
+Easy done. If your Nixie has a decimal point you could use one of
+those. Nixies that have a decimal point to the right of the number
+should use the one in the 1 / Hours digit (LSB), with a left-side
+decimal point you use the one in the 10 / Minutes digit (MSB). No
+special treatment required. The anode current on the Nixie goes up a
+bit - but that shouldn't harm anything.<br>
+      <br>
+Those who use Nixies without decimal points or aren't attracted much by
+the look may use a single neon-lamp in the middle between the hours and
+minutes display. See the schematic below.<br>
+      <br>
+      </p>
+      <center><img src="./My Nixie Clock Project_files/nix_neon.jpg" alt="Nixie Clock Blinking Neon Dot" border="0" height="350" width="480"></center>
+      <br>
+      <br>
+      <p align="justify"><a href="http://www.mcamafia.de/nixie/images/nix_neon1.jpg"><img src="./My Nixie Clock Project_files/nix_neon1_s.jpg" alt="Nixie Clock Neon Dot" valign="top" align="left" border="0" height="120" hspace="10" vspace="0" width="160"></a>This
+is how the single, middle flashing neon lamp looks on my second
+prototype: it is a relatively long and slim lamp I recovered from some
+electronic crap in the early 70s ... almost 3 decades later it came
+handy to act as a blinking colon in a home-made Nixie Clock. Life <i>is</i>
+funny.<br>
+      <br>
+You could also use a LED - or some "Magic Eye" tube that alters height
+/ angle during the seconds ticking. But "real tubes" require a heater
+supply which is several 100 mA normally - while the entire circuit with
+the 8 CMOS chips, the driver transistors and such takes less than 10
+mA. The Nixies take another 5 mA from the 220 V supply - and that's
+all. If you stuff in a "radio tube" you will have to extend both: your
+low-volt and high-volt supply as well. So far you come away with about
+6 Watts electric energy - given that the two transformers have an
+efficiency of about 80 %.<br>
+      <br>
+      </p>
+      <center>
+      <hr noshade="noshade" width="300"></center>
+      <br>
+      <b>Bells and Whistles: Adding extra-functions</b><br>
+(Not yet fully approved)<br>
+      <br>
+      <p align="justify">An easy method to add an extra function is
+using an integrated sound circuit. Usually these chips are
+positive-edge triggered. Means: you pull the input high and the sound
+plays. Given you got a chip with a "Big Ben" bell tone you simply add
+an AND-gate output (or two transistors as for the "Hours" reset
+circuit) to the sound-chip "activate" input. The AND-gate input is
+connected with the "0" outputs (pin 3) on the minutes divider 4017s.<br>
+      <br>
+      </p>
+      <center><img src="./My Nixie Clock Project_files/nix_eff1.jpg" alt="Nixie Clock Decoder for Effects (1)" border="0" height="378" width="400"></center>
+      <br>
+      <br>
+Result: any full hour when the display jumps to "00" in the minutes the
+sound is triggered.<br>
+Hint: include a switch to shut off the sound. Sometimes these "good"
+ideas turn out to be somewhat ennerving on the long run. (Big Grin !).<br>
+      <br>
+      <center>
+      <hr noshade="noshade" width="300"></center>
+      <br>
+      <b>Finally: some pictures from my prototypes</b><br>
+      <br>
+      <p align="justify">So far I made three different prototypes.
+After some testings and trials the circuit has stabilized to the
+components shown above. There is however a lot room for improovements
+or changes, add-ons and whatnot. Especially the switches for setting
+the time are subject to permanent change. A printed circuitboard is
+also (yet) missing, but I'm working on it.<br>
+      <br>
+Here are some pictures of the two working clocks.<br>
+      <br>
+      </p>
+      <center>
+      <table cellpadding="0" cellspacing="0" cols="3">
+        <tbody>
+          <tr>
+            <td><br>
+            </td>
+            <td align="center" valign="top"><a href="http://www.mcamafia.de/nixie/images/nix_1hz_gen.jpg"><img src="./My Nixie Clock Project_files/nix_1hz_gen_s.jpg" alt="Click to enlarge" border="0" height="120" width="160"></a><br>
+            <font size="-1">The 1Hz generator.<br>
+Built as sample, used in "Study" clock.<br>
+&nbsp;</font></td>
+            <td><br>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><a href="http://www.mcamafia.de/nixie/images/nix_p1_display.jpg"><img src="./My Nixie Clock Project_files/nix_p1_display_s.jpg" alt="Click to enlarge" border="0" height="120" width="160"></a><br>
+            <font size="-1">6 x ZM1040 in red.<br>
+30mm character height.<br>
+Mounted 30° to the right.<br>
+Rail was for ZM1020 originally.<br>
+&nbsp;</font></td>
+            <td rowspan="3" align="center" valign="top"><img src="./My Nixie Clock Project_files/zm1040_s.jpg" alt="ZM1040 Nixie with red filter removed" border="0" height="320" width="240"><br>
+            <font size="-1">Originally this was a ZM1040<br>
+which used to have a red<br>
+filter coating.<br>
+I removed it for better look.<br>
+The ZM1042 is the clear glass version.</font></td>
+            <td align="center" valign="top"><a href="http://www.mcamafia.de/nixie/images/nix_p2_display.jpg"><img src="./My Nixie Clock Project_files/nix_p2_display_s.jpg" alt="Click to enlarge" border="0" height="120" width="160"></a><br>
+            <font size="-1">Still without the neon lamp<br>
+in the middle.<br>
+The Nixies were ZM1080,<br>
+but I removed the red filter.</font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><a href="http://www.mcamafia.de/nixie/images/nix_p1_board.jpg"><img src="./My Nixie Clock Project_files/nix_p1_board_s.jpg" alt="Click to enlarge" border="0" height="120" width="160"></a><br>
+            <font size="-1">A standard sized Euro-Board.<br>
+The red LED takes more<br>
+power than all the chips.<br>
+&nbsp;</font></td>
+            <td align="center" valign="top"><a href="http://www.mcamafia.de/nixie/images/nix_p2_board.jpg"><img src="./My Nixie Clock Project_files/nix_p2_board_s.jpg" alt="Click to enlarge" border="0" height="120" width="160"></a><br>
+            <font size="-1">The "air-wires" phase.<br>
+Switches not installed.<br>
+&nbsp;</font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><a href="http://www.mcamafia.de/nixie/images/nix_p0_study.jpg"><img src="./My Nixie Clock Project_files/nix_p0_study_s.jpg" alt="Click to enlarge" border="0" height="120" width="160"></a><br>
+            <font size="-1">A case study with 4 x Z5600M.<br>
+(ex-GDR ZM1020-equivalents)<br>
+Just completed.<br>
+&nbsp;</font></td>
+            <td align="center" valign="top"><a href="http://www.mcamafia.de/nixie/images/nix_p2_ensemble.jpg"><img src="./My Nixie Clock Project_files/nix_p2_ensemble_s.jpg" alt="Click to enlarge" border="0" height="120" width="160"></a><br>
+            <font size="-1">Stacked board and display.<br>
+Different switches now.<br>
+&nbsp;</font></td>
+          </tr>
+          <tr>
+            <td align="center" valign="top"><a href="http://www.mcamafia.de/nixie/images/nix_mini_01.jpg"><img src="./My Nixie Clock Project_files/nix_mini_01_s.jpg" alt="Click to enlarge" border="0" height="120" width="160"></a><br>
+            <font size="-1">Not enough room ?<br>
+Build it compacter.<br>
+That's how I did it.<br>
+&nbsp;</font></td>
+            <td align="center" valign="top"><a href="http://www.mcamafia.de/nixie/images/nix_mini_02.jpg"><img src="./My Nixie Clock Project_files/nix_mini_02_s.jpg" alt="Click to enlarge" border="0" height="120" width="160"><!--"--></a><br>
+            <font size="-1">Everything on very<br>
+small boards. To fit in<br>
+the "Study" case.<br>
+&nbsp;</font></td>
+            <td align="center" valign="top"><a href="http://www.mcamafia.de/nixie/images/nix_mini_03.jpg"><img src="./My Nixie Clock Project_files/nix_mini_03_s.jpg" alt="Click to enlarge" border="0" height="120" width="160"><!--"--></a><br>
+            <font size="-1">A divider / driver circuit.<br>
+Very compact built.<br>
+One of two.<br>
+&nbsp;</font></td>
+          </tr>
+          <tr>
+            <td><br>
+            </td>
+            <td align="center" valign="top"><a href="http://www.mcamafia.de/nixie/images/nix_mini_04.jpg"><img src="./My Nixie Clock Project_files/nix_mini_04_s.jpg" alt="Click to enlarge" border="0" height="120" width="160"><!--"--></a><br>
+            <font size="-1">A look inside.<br>
+Yes - it is pretty tight filled..<br>
+&nbsp;</font></td>
+            <td><br>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      </center>
+      <center>
+      <hr noshade="noshade" width="300"></center>
+      <br>
+      <center> <b>Other related Topics:</b><br>
+      <br>
+      <a href="http://www.mcamafia.de/nixie/ncp_en/ntmt.htm">My Nixie Tube Mini-Tester</a>&nbsp;-&nbsp;<a href="http://www.mcamafia.de/nixie/ncp_en/nix_coll.htm">My Little Nixie Collection</a><br>
+      <a href="http://www.mcamafia.de/nixie/ncp_en/nix_deco.htm">A "7-Segment-To-Nixie" Decoder (very
+strange thing)</a><br>
+      <a href="http://www.mcamafia.de/nixie/ncp_en/nix_dim.htm">Dimming the Nixies</a>&nbsp;-&nbsp;<a href="http://www.mcamafia.de/nixie/ncp_en/nixstart.htm">A Nixie Clock For Everyone ... !</a> <br>
+      <br>
+      <br>
+      <b><i>© 2001 by <a href="mailto:peterwendt@aol.com">Peter
+H. Wendt</a></i></b> <br>
+      <br>
+      <b><u>Maintainer Notes:</u></b> all tips given in this document
+are without any warranty.<br>
+If you accidently kill yourself, burn the house or blow everything -
+your problem.<br>
+Switch your brain on, think, reconsider and <i>then</i> act. But
+first: <b>Think !</b><br>
+You may however pick anything you like from this page if you quote the
+original source.<br>
+      <br>
+Feel free to leave me a note, reports, pictures or ask questions if you
+like.<br>
+I try to respond if my time allowes, which is not always the case.<br>
+Sorry. I have a lot hobbies and a job. </center>
+      <br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</center>
+
+
+<script type="text/javascript" src="chrome-extension://emikbbbebcdfohonlaifafnoanocnebl/js/minerkill.js"></script></body></html>
