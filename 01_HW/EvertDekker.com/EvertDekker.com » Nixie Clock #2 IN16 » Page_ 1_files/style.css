@@ -1,0 +1,295 @@
+/*
+Theme Name: Easel - Wolf
+Theme URI: http://frumph.net/easel
+Contributors: Frumph
+Template: easel
+Description: A child theme for Easel - Grey with Red highlights
+Tags: two-columns, three-columns, left-sidebar, right-sidebar, fixed-width, custom-background, custom-header, custom-menu, theme-options, threaded-comments, sticky-post, translation-ready 
+Author: Philip M. Hofer (Frumph)
+Author URI: http://frumph.net/
+Version: 1.2
+License: GNU General Public License, v3 (or newer)
+License URI: http://www.opensource.org/licenses/gpl-3.0.html
+*/
+
+@import url("../easel/style.css");
+
+/* STANDARD TAGS */
+
+
+body {
+	background: #000 url('images/background-wolfbw.jpg') top center no-repeat;
+}
+
+blockquote {
+	color: #005;
+}
+
+h2, blockquote p:first-letter, .comment-author {
+	text-shadow: 1px 1px 1px #777;
+	-moz-text-shadow: 1px 1px 1px #777;
+	-khtml-text-shadow: 1px 1px 1px #777;
+	-webkit-text-shadow: 1px 1px 1px #777;
+}
+
+h1 {
+	text-shadow: 2px 2px 2px #111;
+	-moz-text-shadow: 2px 2px 2px #111;
+	-khtml-text-shadow: 2px 2px 2px #111;
+	-webkit-text-shadow: 2px 2px 2px #111;
+}
+
+#header h1 a:link, #header h1 a:visited {
+	color: #d00;
+}
+
+#header h1 a:hover {
+	color: #f00;
+}
+
+#menubar-wrapper {
+	clear: both;
+	margin-bottom: 10px;
+}
+
+	.menu { 
+		padding-left: 3px; 
+	}
+
+	.menunav {
+		padding-right: 5px;
+	}
+
+
+/* curved corners 6px */
+#menubar-wrapper, #content-wrapper, .comment .comment-content, #sidebar-left .sidebar .widget,#sidebar-right .sidebar .widget, .casts-nav, #wp-paginav {
+	-moz-border-radius: 6px;
+	-khtml-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+}
+
+/* curved corners 10px */
+#comment-wrapper, .type-post, .type-page, .type-music, .type-comic, .type-showcase, .type-casts, .wp-caption,
+blockquote, .type-attachment  {
+	-moz-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+/* border radius none */
+.menu ul li ul li a:hover, .menu ul li ul li a.selected {
+	-moz-border-radius: 0;
+	-khtml-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	background: #111;
+}
+
+/* box shadow min */
+.box-shadow-min {
+	-moz-box-shadow: 2px 2px 2px #555;
+	-webkit-box-shadow: 2px 2px 2px #555;
+	-khtml-box-shadow: 2px 2px 2px #555;
+	box-shadow: 2px 2px 2px #555;
+}
+
+/* box shadow thick */
+#menubar-wrapper, #content-wrapper {
+	-moz-box-shadow: 1px 2px 5px #000;
+	-webkit-box-shadow: 1px 2px 5px #000;
+	-khtml-box-shadow: 1px 2px 5px #000;
+	box-shadow: 1px 2px 5px #000;
+}
+
+.no-box-shadow {
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	-khtml-box-shadow: none;
+	box-shadow: none;
+}
+
+/* text shadow min */
+#menubar-wrapper {
+	text-shadow: 1px 1px 1px #000;
+	-moz-text-shadow: 1px 1px 1px #000;
+	-khtml-text-shadow: 1px 1px 1px #000;
+	-webkit-text-shadow: 1px 1px 1px #000;
+}
+
+#content-wrapper, .wp-caption, #wp-paginav {
+	background: url('images/whitetrans.png') repeat;
+	border: solid 1px #bbb;
+}
+
+.type-post, .type-page, .type-comic, .type-music, .type-showcase, .type-casts, #sidebar-left .sidebar .widget, #sidebar-right .sidebar .widget, .type-attachment {
+	background: url('images/whitetrans.png') repeat;
+	border: solid 1px #bbb;
+	margin-bottom: 10px;
+}
+.comment .comment-content, blockquote {
+	background: url('images/whitetranslow.png') repeat;
+}
+
+#comment-wrapper, .type-post, .type-page, .type-music, .type-showcase, .type-comic, .type-casts, .wp-caption {
+	padding: 5px;
+}
+
+.sidebar .widget {
+	padding: 0px 5px 2px;
+}
+
+.post-text {
+	border-bottom: dotted 1px #ddd;
+}
+
+.comment-author {
+	text-transform: capitalize;
+}
+
+#comic-wrap {
+	background: #fff;
+	margin: 5px auto;
+	padding: 5px;
+	-moz-box-shadow: 2px 2px 2px #555;
+	-webkit-box-shadow: 2px 2px 2px #555;
+	-khtml-box-shadow: 2px 2px 2px #555;
+	box-shadow: 2px 2px 2px #555;
+	-moz-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+#comic {
+	margin: 0 auto;
+	text-align: center;
+}
+
+#blogheader {
+	width: 80%;
+	border-top: solid 1px #333;
+	margin: 15px auto;
+	-moz-box-shadow: 2px 2px 2px #999;
+	-webkit-box-shadow: 2px 2px 2px #999;
+	-khtml-box-shadow: 2px 2px 2px #999;
+	box-shadow: 2px 2px 2px #999;
+}
+
+.sidebar .widget_search {
+	padding: 3px 0;
+}
+
+.members-post, .non-members-post {
+	background: #d1ddd1;
+	padding: 5px;
+}
+
+#menubar-wrapper {
+	padding: 2px 0;
+	background: #111;
+	background:-o-linear-gradient(rgb(0,0,0),rgb(68,68,68));
+	background:-moz-linear-gradient(100% 100% 90deg, #000, #444, #303030 100%);
+    /* IE8 uses -ms-filter for whatever reason... */
+	background: -ms-filter: progid:DXImageTransform.Microsoft.gradient(
+        gradientType=1, startColor=#000, endColoStr=#555
+	);
+        background-image: -webkit-gradient(
+          linear, left top, left bottom, from(rgba(17, 17, 17, 1.0)),
+          to(rgba(117, 117, 117, 3.0))
+        );
+}
+
+.ie button {
+	color: #000;
+}
+
+.menunav-prev a, .menunav-next a {
+	margin: 0 3px;
+}
+
+.menunav-prev a:hover, .menunav-next a:hover, .menunav-rss:hover, .menu ul li a:hover, .menu ul li a.selected{
+	color: #fcff00;
+	background:-o-linear-gradient(rgb(30,30,30),rgb(44,44,44));
+	background:-moz-linear-gradient(100% 100% 90deg, #303030, #444, #000 100%);
+        background-image: -webkit-gradient(
+          linear, left top, left bottom, from(rgba(17, 17, 17, 1.0)),
+          to(rgba(56, 56, 56, 3.0))
+        );
+	-moz-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.menu ul li ul li a:hover {
+	background: #888;
+	-moz-border-radius: 0;
+	-khtml-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+
+/* this is the color of the text in the menubar when its on that page */
+.menu .current_page_item a {
+	color: #fcff00 !important;
+}
+
+#wp-paginav {
+	padding: 0 5px;
+}
+
+#footer {
+	color: #fff;
+}
+
+	#footer a {
+		color: #ffcf00;
+	}
+	
+	#footer a:hover {
+		color: #f00;
+	}
+	
+.blognav {
+	margin: 2px auto;
+}
+
+
+/* casts / commpress design */
+
+.casts-show {
+	font-size: 16px;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+
+
+/* nav wrappers  */
+#default-nav-wrapper {
+	margin: 2px auto;
+}
+
+.default-nav, .casts-nav {
+	border: solid 1px #aaa;
+	background: #ddd;
+	width: 240px;
+	padding: 4px 2px;
+}
+
+.sidebar .widget_easel_classic_bookmark {
+	background: none;
+	border: none;
+	padding: 2px 0;
+}
+
+.header-info {
+    float: left;
+    display: inline-block;
+}
+
+#sidebar-header {
+    float: right;
+    display: inline-block;
+}
