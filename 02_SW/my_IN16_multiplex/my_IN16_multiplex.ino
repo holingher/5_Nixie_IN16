@@ -1,6 +1,9 @@
+//Optiboot on 28-pin cpu
+//16MHz
+//ATmega88
+
 #include <Time.h>
 #include "RTClib.h"
-#include <EEPROM.h>
 
 #define PIN_TUBE_HOUR_x0 PD5 //hardware 9 - arduino 5
 #define PIN_TUBE_HOUR_0x PD4 //hardware 2 - arduino 4
@@ -16,44 +19,35 @@
 #define PIN_C PC2//hardware 25 - arduino 16
 #define PIN_D PC3//hardware 26 - arduino 17
 
-RTC_DS3231 RTC;
+//RTC_DS3231 RTC;
+RTC_DS1307 RTC;
 DateTime now;
-DateTime now_btn;
-#define SWITCH_HOUR_SUMM_WINTER    PB0   //hw 12    // the pin that the pushbutton is attached to
-const int  buttonPin_1 = PB1;  //hw 13    // the pin that the pushbutton is attached to
+const int buttonPin_1 = PB1;  //hw 13    // the pin that the pushbutton is attached to
 
 int lastButtonState = 0;     // previous state of the button
 int buttonState = 0;         // current state of the button
 /** the current address in the EEPROM (i.e. which byte we're going to write to next) **/
 int address = 0;
-byte RTC_setup = 0x00;
 
 void setup() {
   
   RTC.begin();
-  RTC.use_summertime_EU = true;
   // put your setup code here, to run once:
   DDRB = 0b00000001; // PB0 is used
   DDRC = 0b00001111; // PC0 - PC5 are used
   DDRD = 0b00111111; // PD0 - PD5 are used
 
 // initialize the button pin as a input:
-  pinMode(PB0, INPUT);
-  
-  RTC_setup = EEPROM.read(address);
-  //first comment this to set the clock
-  //second uncomment this to run ok
-  if (/*(RTC.lostPower()) &&*/ (RTC_setup == 0x00)) 
+  pinMode(PB1, INPUT);
+
+  //if (RTC.lostPower())
   {
     //Serial.println("RTC lost power, lets set the time!");
     // following line sets the RTC to the date & time this sketch was compiled
-    RTC.adjust(DateTime(F(__DATE__), F(__TIME__)));
+    //RTC.adjust(DateTime(F(__DATE__), F(__TIME__)));
     // This line sets the RTC with an explicit date & time, for example to set
     // January 21, 2014 at 3am you would call:
     // rtc.adjust(DateTime(2014, 1, 21, 3, 0, 0));
-
-    RTC_setup = 0x01;
-    EEPROM.write(address, RTC_setup);
   }
 
   cli();//stop interrupts
@@ -81,7 +75,7 @@ void switch_Winter_Summer_Hour()
 {
   int local_hour = 0;
   // read the pushbutton input pin:
-  buttonState = digitalRead(PB0);
+  buttonState = digitalRead(PB1);
 
   // compare the buttonState to its previous state
   if (buttonState != lastButtonState) {
@@ -175,7 +169,7 @@ void loop()
   now = RTC.now();
 
   //check button press
-  //switch_Winter_Summer_Hour();
+  switch_Winter_Summer_Hour();
   //PIN_TUBE_SEC_0x
   display_clock(PD0, (now.second())%10); 
   //PIN_TUBE_SEC_x0
